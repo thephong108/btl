@@ -47,25 +47,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO.cs" />
+    <Compile Include="FrmGiaovien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGiaovien.Designer.cs">
+      <DependentUpon>FrmGiaovien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hocvien.cs">
+    <Compile Include="FrmHocvien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hocvien.Designer.cs">
-      <DependentUpon>Hocvien.cs</DependentUpon>
+    <Compile Include="FrmHocvien.Designer.cs">
+      <DependentUpon>FrmHocvien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmGiaovien.resx">
+      <DependentUpon>FrmGiaovien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hocvien.resx">
-      <DependentUpon>Hocvien.cs</DependentUpon>
+    <EmbeddedResource Include="FrmHocvien.resx">
+      <DependentUpon>FrmHocvien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -15,7 +15,7 @@ namespace quanlyloptinhocvangoaingunganhan
         class DAO
         {
             public static SqlConnection conn;
-            public static string connectionString = "Data Source = MSI; Initial Catalog = quanlybanhang; Integrated Security = True";
+            public static string connectionString = "Data Source=MSI;Initial Catalog=QLtinhoc;Integrated Security=True";
             public static void OpenConnection()
             {
                 conn = new SqlConnection();
@@ -140,10 +140,13 @@ namespace quanlyloptinhocvangoaingunganhan
                 }
                 return h;
             }
-
-
+        public static string ConvertDateTime(string d)
+        {
+            string[] parts = d.Split('/');
+            string dt = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+            return dt;
         }
+
+    }
     }
 
-}
-}

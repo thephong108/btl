@@ -34,7 +34,14 @@ namespace quanlyloptinhocvangoaingunganhan
 
         private void hocVienToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FrmHocvien f1 = new FrmHocvien();
+            f1.Show();
+        }
 
+        private void giaoVieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGiaovien f1 = new FrmGiaovien();
+            f1.Show();
         }
     }
 }
