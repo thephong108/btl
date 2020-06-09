@@ -35,16 +35,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.gridviewGV = new System.Windows.Forms.DataGridView();
-            this.MaG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaChucDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Matrindo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtDiachi = new System.Windows.Forms.TextBox();
             this.cboMatrinhdo = new System.Windows.Forms.ComboBox();
@@ -70,6 +60,16 @@
             this.btnopen = new System.Windows.Forms.Button();
             this.txtAnh = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.MaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaChucDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaCQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Matrinhdo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +90,7 @@
             this.btnThoat.TabIndex = 59;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLuu
             // 
@@ -109,6 +110,7 @@
             this.btnXoa.TabIndex = 57;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -134,7 +136,7 @@
             // 
             this.gridviewGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridviewGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaG,
+            this.MaGV,
             this.TenGV,
             this.Ngaysinh,
             this.Gioitinh,
@@ -142,73 +144,14 @@
             this.Diachi,
             this.MaChucDanh,
             this.MaCQ,
-            this.Matrindo,
+            this.Matrinhdo,
             this.Anh});
             this.gridviewGV.Location = new System.Drawing.Point(19, 349);
             this.gridviewGV.Name = "gridviewGV";
             this.gridviewGV.RowTemplate.Height = 24;
             this.gridviewGV.Size = new System.Drawing.Size(1034, 184);
             this.gridviewGV.TabIndex = 54;
-            // 
-            // MaG
-            // 
-            this.MaG.DataPropertyName = "MaGV";
-            this.MaG.HeaderText = "Mã Giáo Viên";
-            this.MaG.Name = "MaG";
-            // 
-            // TenGV
-            // 
-            this.TenGV.DataPropertyName = "TenGV";
-            this.TenGV.HeaderText = "Tên Giáo Viên";
-            this.TenGV.Name = "TenGV";
-            // 
-            // Ngaysinh
-            // 
-            this.Ngaysinh.DataPropertyName = "NgaySinh";
-            this.Ngaysinh.HeaderText = "Ngày sinh";
-            this.Ngaysinh.Name = "Ngaysinh";
-            // 
-            // Gioitinh
-            // 
-            this.Gioitinh.DataPropertyName = "GioiTinh";
-            this.Gioitinh.HeaderText = "Giới tính";
-            this.Gioitinh.Name = "Gioitinh";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "DienThoai";
-            this.SDT.HeaderText = "Điện Thoại";
-            this.SDT.Name = "SDT";
-            // 
-            // Diachi
-            // 
-            this.Diachi.DataPropertyName = "DiaChi";
-            this.Diachi.HeaderText = "Địa chỉ";
-            this.Diachi.Name = "Diachi";
-            // 
-            // MaChucDanh
-            // 
-            this.MaChucDanh.DataPropertyName = "MaChucDanh";
-            this.MaChucDanh.HeaderText = "Mã Chức Danh";
-            this.MaChucDanh.Name = "MaChucDanh";
-            // 
-            // MaCQ
-            // 
-            this.MaCQ.DataPropertyName = "MaCQ";
-            this.MaCQ.HeaderText = "Mã Cơ Quan";
-            this.MaCQ.Name = "MaCQ";
-            // 
-            // Matrindo
-            // 
-            this.Matrindo.DataPropertyName = "MaTrinhDo";
-            this.Matrindo.HeaderText = "Mã Trình Độ";
-            this.Matrindo.Name = "Matrindo";
-            // 
-            // Anh
-            // 
-            this.Anh.DataPropertyName = "Anh";
-            this.Anh.HeaderText = "Ảnh";
-            this.Anh.Name = "Anh";
+            this.gridviewGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewGV_CellClick);
             // 
             // txtSDT
             // 
@@ -216,6 +159,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(144, 22);
             this.txtSDT.TabIndex = 52;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtDiachi
             // 
@@ -424,6 +368,66 @@
             this.label11.TabIndex = 64;
             this.label11.Text = "Ảnh";
             // 
+            // MaGV
+            // 
+            this.MaGV.DataPropertyName = "MaGV";
+            this.MaGV.HeaderText = "Mã Giáo Viên";
+            this.MaGV.Name = "MaGV";
+            // 
+            // TenGV
+            // 
+            this.TenGV.DataPropertyName = "TenGV";
+            this.TenGV.HeaderText = "Tên Giáo Viên";
+            this.TenGV.Name = "TenGV";
+            // 
+            // Ngaysinh
+            // 
+            this.Ngaysinh.DataPropertyName = "NgaySinh";
+            this.Ngaysinh.HeaderText = "Ngày sinh";
+            this.Ngaysinh.Name = "Ngaysinh";
+            // 
+            // Gioitinh
+            // 
+            this.Gioitinh.DataPropertyName = "GioiTinh";
+            this.Gioitinh.HeaderText = "Giới tính";
+            this.Gioitinh.Name = "Gioitinh";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "DienThoai";
+            this.SDT.HeaderText = "Điện Thoại";
+            this.SDT.Name = "SDT";
+            // 
+            // Diachi
+            // 
+            this.Diachi.DataPropertyName = "DiaChi";
+            this.Diachi.HeaderText = "Địa chỉ";
+            this.Diachi.Name = "Diachi";
+            // 
+            // MaChucDanh
+            // 
+            this.MaChucDanh.DataPropertyName = "MaChucDanh";
+            this.MaChucDanh.HeaderText = "Mã Chức Danh";
+            this.MaChucDanh.Name = "MaChucDanh";
+            // 
+            // MaCQ
+            // 
+            this.MaCQ.DataPropertyName = "MaCQ";
+            this.MaCQ.HeaderText = "Mã Cơ Quan";
+            this.MaCQ.Name = "MaCQ";
+            // 
+            // Matrinhdo
+            // 
+            this.Matrinhdo.DataPropertyName = "MaTrinhDo";
+            this.Matrinhdo.HeaderText = "Mã Trình Độ";
+            this.Matrinhdo.Name = "Matrinhdo";
+            // 
+            // Anh
+            // 
+            this.Anh.DataPropertyName = "Anh";
+            this.Anh.HeaderText = "Ảnh";
+            this.Anh.Name = "Anh";
+            // 
             // FrmGiaovien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -505,7 +509,7 @@
         private System.Windows.Forms.Button btnopen;
         private System.Windows.Forms.TextBox txtAnh;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gioitinh;
@@ -513,7 +517,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaChucDanh;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCQ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Matrindo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Matrinhdo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anh;
     }
 }

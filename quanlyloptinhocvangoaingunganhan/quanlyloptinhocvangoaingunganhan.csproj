@@ -47,11 +47,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO.cs" />
+    <Compile Include="FrmBaoCaoDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaoCaoDoanhThu.Designer.cs">
+      <DependentUpon>FrmBaoCaoDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCoQuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCoQuan.Designer.cs">
+      <DependentUpon>FrmCoQuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDSDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDSDiem.Designer.cs">
+      <DependentUpon>FrmDSDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGiaovien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmGiaovien.Designer.cs">
       <DependentUpon>FrmGiaovien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLophoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLophoc.Designer.cs">
+      <DependentUpon>FrmLophoc.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -65,8 +89,23 @@
     <Compile Include="FrmHocvien.Designer.cs">
       <DependentUpon>FrmHocvien.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNgheNghiep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNgheNghiep.Designer.cs">
+      <DependentUpon>FrmNgheNghiep.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBaoCaoDoanhThu.resx">
+      <DependentUpon>FrmBaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCoQuan.resx">
+      <DependentUpon>FrmCoQuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDSDiem.resx">
+      <DependentUpon>FrmDSDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGiaovien.resx">
       <DependentUpon>FrmGiaovien.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHocvien.resx">
       <DependentUpon>FrmHocvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNgheNghiep.resx">
+      <DependentUpon>FrmNgheNghiep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

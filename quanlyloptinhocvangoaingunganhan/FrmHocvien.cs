@@ -136,22 +136,22 @@ namespace quanlyloptinhocvangoaingunganhan
             }
             if (cboNam.SelectedIndex == -1)
             {
-                MessageBox.Show("Bạn chưa chọn Nam sinh", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa chọn năm sinh", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (cboNgay1.SelectedIndex == -1)
             {
-                MessageBox.Show("Bạn chưa chọn ngày sinh", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa chọn ngày nộp học phí", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (cboThang1.SelectedIndex == -1)
             {
-                MessageBox.Show("Bạn chưa chọn tháng sinh", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa chọn tháng nộp học phí", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (cboNam1.SelectedIndex == -1)
             {
-                MessageBox.Show("Bạn chưa chọn Nam sinh", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa chọn năm nộp học phí", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string sqlCheckkey = "Select * from tblHocvien where MaHocVien = '" + txtMaHV.Text.Trim() + "'";
@@ -167,9 +167,9 @@ namespace quanlyloptinhocvangoaingunganhan
             else
             {
                 string Ngaysinh;
-                Ngaysinh = String.Format("{0}/{1}/{2}", cboThang.Text, cboNgay.Text, cboNam.Text);
+                Ngaysinh = String.Format("{1}/{0}/{2}", cboNgay.Text, cboThang.Text, cboNam.Text);
                 string NgayNopHocPhi;
-                NgayNopHocPhi = String.Format("{0}/{1}/{2}", cboThang1.Text, cboNgay1.Text, cboNam1.Text);
+                NgayNopHocPhi = String.Format("{1}/{0}/{2}", cboNgay1.Text, cboThang1.Text, cboNam1.Text);
 
                 string sql = "insert into tblHocvien values('" + txtMaHV.Text.Trim() + "',N'" + txtTenHV.Text.Trim()
                     + "','" + cboMalop.SelectedValue.ToString()
@@ -248,6 +248,7 @@ namespace quanlyloptinhocvangoaingunganhan
 
         private void gridviewHV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+           
             txtMaHV.Enabled = false;
             txtTenHV.Text = gridviewHV.CurrentRow.Cells["TenHV"].Value.ToString();
             txtDiem.Text = gridviewHV.CurrentRow.Cells["Diem"].Value.ToString();
@@ -256,47 +257,36 @@ namespace quanlyloptinhocvangoaingunganhan
             txtSDT.Text = gridviewHV.CurrentRow.Cells["SDT"].Value.ToString();
             cboMalop.Text = gridviewHV.CurrentRow.Cells["MaLop"].Value.ToString();
             cboManghe.Text = gridviewHV.CurrentRow.Cells["MaNghe"].Value.ToString();
-   
             string[] date = gridviewHV.CurrentRow.Cells["Ngaysinh"].Value.ToString().Split('/');
             string[] year = date[2].Split(' ');
-            cboNgay.Text = date[0];
-            cboThang.Text = date[1];
+            cboNgay.Text = date[1];
+            cboThang.Text = date[0];
             cboNam.Text = year[0];
             string[] date1 = gridviewHV.CurrentRow.Cells["NgayNopHocPhi"].Value.ToString().Split('/');
             string[] year1 = date1[2].Split(' ');
-            cboNgay1.Text = date1[0];
-            cboThang1.Text = date1[1];
+            cboNgay1.Text = date1[1];
+            cboThang1.Text = date1[0];
             cboNam1.Text = year1[0];
             cboGioitinh.Text = gridviewHV.CurrentRow.Cells["Gioitinh"].Value.ToString();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string Ngaysinh;
-            string[] date = gridviewHV.CurrentRow.Cells["Ngaysinh"].Value.ToString().Split('/');
-            string[] year = date[2].Split(' ');
-            cboNgay.Text = date[0];
-            cboThang.Text = date[1];
-            cboNam.Text = year[0];
-            string[] date1 = gridviewHV.CurrentRow.Cells["NgayNopHocPhi"].Value.ToString().Split('/');
-            string[] year1 = date1[2].Split(' ');
-            cboNgay1.Text = date1[0];
-            cboThang1.Text = date1[1];
-            cboNam1.Text = year1[0];
             
-        
-        Ngaysinh = string.Format("{0}/{1}/{2}", date[0], date[1], year[0]);
-            string NgayNopHocPhi;
-            NgayNopHocPhi = String.Format("{0}/{1}/{2}", cboNgay1.Text,cboThang1.Text,cboNam1.Text);
+            string Ngaysinh;
+            Ngaysinh = String.Format("{1}/{0}/{2}", cboNgay.Text, cboThang.Text, cboNam.Text);
+                   string NgayNopHocPhi;
+            NgayNopHocPhi = String.Format("{1}/{0}/{2}", cboNgay1.Text, cboThang1.Text, cboNam1.Text);
 
-            string sql = "UPDATE tblHocvien SET TenHocVien = N'" + txtTenHV.Text.Trim() + "', MaLop='" + cboMalop.Text.Trim() + "', MaNghe='" + cboManghe.Text.Trim() +
+            string sql = "UPDATE tblHocvien SET TenHocVien = N'" + txtTenHV.Text.Trim() + "', MaLop='" + cboMalop.Text.Trim() + "',NgaySinh='" + Ngaysinh + "', MaNghe='" + cboManghe.Text.Trim() +
 
-           "', Gioitinh=N'" + cboGioitinh.Text.Trim() + "',Diachi=N'" + txtDiachi.Text.Trim() + "',NgaySinh='" +Ngaysinh+ "',NgayNopHocPhi='" + NgayNopHocPhi+
+           "', Gioitinh=N'" + cboGioitinh.Text.Trim() + "',Diachi=N'" + txtDiachi.Text.Trim() +  "',NgayNopHocPhi=N'" + NgayNopHocPhi +
            "',DienThoai=N'" + txtSDT.Text.Trim() +
            "',Diem=N'" + txtDiem.Text.Trim() +
            "'WHERE MaHocVien='" + txtMaHV.Text.Trim() + "'";
                 
             DAO.OpenConnection();
+            
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = sql;
             cmd.Connection = DAO.conn;

@@ -159,22 +159,41 @@ namespace quanlyloptinhocvangoaingunganhan
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            string Ngaysinh;
+            Ngaysinh = String.Format("{1}/{0}/{2}", cboNgay.Text, cboThang.Text, cboNam.Text);
+           
 
+            string sql = "UPDATE tblGiaovien SET TenGv = N'" + txtTenGV.Text.Trim() + "', Machudanh='" + cboMachucdanh.Text.Trim() 
+                + "',NgaySinh='" + Ngaysinh + "', MaChuyenMon='" + cboMachuyenmon.Text.Trim() +
+
+           "', Gioitinh=N'" + cboGioitinh.Text.Trim() + "',Diachi=N'" + txtDiachi.Text.Trim() + "',MaCQ=N'" + cboMaCQ.SelectedText.ToString() +
+           "',DienThoai=N'" + txtSDT.Text.Trim() + "', Matrinhdo='" + cboMatrinhdo.Text.Trim() +
+           "',Anh=N'" + txtAnh.Text.Trim() +
+           "'WHERE MaGV='" + txtMaGV.Text.Trim() + "'";
+
+            DAO.OpenConnection();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = sql;
+            cmd.Connection = DAO.conn;
+            cmd.ExecuteNonQuery();
+            DAO.CloseConnection();
+            LoaddatatoGridview();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
 
-            if (txtMaHV.Text == "")
+            if (txtMaGV.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập mã học viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtMaHV.Focus();
+                txtMaGV.Focus();
                 return;
             }
-            if (txtTenHV.Text == "")
+            if (txtTenGV.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập tên học viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtTenHV.Focus();
+                txtTenGV.Focus();
                 return;
             }
             if (cboGioitinh.SelectedIndex == -1)
@@ -182,10 +201,10 @@ namespace quanlyloptinhocvangoaingunganhan
                 MessageBox.Show("Bạn chưa chọn giới tính", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (txtDiem.Text == "")
+            if (txtSDT.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập điểm", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtDiem.Focus();
+                txtSDT.Focus();
                 return;
             }
             if (txtDiachi.Text == "")
@@ -242,15 +261,15 @@ namespace quanlyloptinhocvangoaingunganhan
             else
             {
                 string Ngaysinh;
-                Ngaysinh = String.Format("{0}/{1}/{2}", cboThang.Text, cboNgay.Text, cboNam.Text);
-           
+                Ngaysinh = String.Format("{1}/{0}/{2}", cboNgay.Text, cboThang.Text, cboNam.Text);
+     
 
-                string sql = "insert into tblHocvien values('" + txtMaHV.Text.Trim() + "',N'" + txtTenHV.Text.Trim()
-                    + "','" + cboMalop.SelectedValue.ToString()
+                string sql = "insert into tblHocvien values('" + txtMaGV.Text.Trim() + "',N'" + txtTenGV.Text.Trim()
+                    + "','" + cboMachucdanh.SelectedValue.ToString()
 
-                    + "','" + Ngaysinh + "',N'" + cboGioitinh.Text.Trim() + "',N'" + txtDiachi.Text.Trim() + "','" + cboManghe.SelectedValue.ToString()
+                    + "','" + Ngaysinh + "',N'" + cboGioitinh.Text.Trim() + "',N'" + txtDiachi.Text.Trim() + "','" + cboMachuyenmon.SelectedValue.ToString()
 
-                    + "','" + txtSDT.Text.Trim() + "','" + NgayNopHocPhi + "','" + txtDiem.Text.Trim() + "')";
+                    + "','" + txtSDT.Text.Trim()  + "','" +cboMaCQ.SelectedIndex.ToString() + "','" + cboMatrinhdo.SelectedIndex.ToString() + "')";
 
                 SqlCommand cmd = new SqlCommand(sql, DAO.conn);
                 cmd.ExecuteNonQuery();
@@ -260,6 +279,53 @@ namespace quanlyloptinhocvangoaingunganhan
                 DAO.CloseConnection();
 
             }
+        }
+
+        private void gridviewGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
+            txtMaGV.Enabled = false;
+            txtTenGV.Text = gridviewGV.CurrentRow.Cells["TenGV"].Value.ToString();
+            cboMachucdanh.Text = gridviewGV.CurrentRow.Cells["Machucdanh"].Value.ToString();
+            txtMaGV.Text = gridviewGV.CurrentRow.Cells["MaGV"].Value.ToString();
+            txtDiachi.Text = gridviewGV.CurrentRow.Cells["DiaChi"].Value.ToString();
+            txtSDT.Text = gridviewGV.CurrentRow.Cells["SDT"].Value.ToString();
+            cboMachuyenmon.Text = gridviewGV.CurrentRow.Cells["MaChuyenMon"].Value.ToString();
+            cboMaCQ.Text = gridviewGV.CurrentRow.Cells["MaCQ"].Value.ToString();
+            cboMatrinhdo.Text = gridviewGV.CurrentRow.Cells["Matrinhdo"].Value.ToString();
+            string[] date = gridviewGV.CurrentRow.Cells["Ngaysinh"].Value.ToString().Split('/');
+            string[] year = date[2].Split(' ');
+            cboNgay.Text = date[1];
+            cboThang.Text = date[0];
+            cboNam.Text = year[0];
+            txtAnh.Text = gridviewGV.CurrentRow.Cells["Anh"].Value.ToString();
+            cboGioitinh.Text = gridviewGV.CurrentRow.Cells["Gioitinh"].Value.ToString();
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar < '0') || (e.KeyChar > '9')) && (Convert.ToInt16(e.KeyChar) != 8))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+            string sql = "delete from tblGiaovien where MaGV = '" + txtMaGV.Text + "'";
+            DAO.OpenConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = sql;
+            cmd.Connection = DAO.conn;
+            cmd.ExecuteNonQuery();
+            DAO.CloseConnection();
+            LoaddatatoGridview();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

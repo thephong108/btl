@@ -43,5 +43,40 @@ namespace quanlyloptinhocvangoaingunganhan
             FrmGiaovien f1 = new FrmGiaovien();
             f1.Show();
         }
+
+        private void cơQuanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCoquan f1 = new frmCoquan();
+            f1.Show();
+        }
+
+        private void nghềNghiệpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNghenghiep f1 = new frmNghenghiep();
+            f1.Show();
+        }
+
+      
+
+        private void baoCaoDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBaoCaoDoanhThu f1 = new FrmBaoCaoDoanhThu();
+            f1.Show();
+
+        }
+
+        private void danhSáchĐiểmTheoLớpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDSDiem f1 = new FrmDSDiem();
+            f1.Show();
+        }
+
+        private void lopHocToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmLophoc f1 = new FrmLophoc();
+            f1.Show();
+        }
     }
-}
+    }
+    
+
