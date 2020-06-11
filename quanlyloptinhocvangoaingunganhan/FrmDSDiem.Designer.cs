@@ -104,7 +104,7 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "DANH SÁCH ĐIỂM";
             // 
-            // FrmDanhSachDiem
+            // FrmDSDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,8 +112,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvDanhSachDiem);
             this.Controls.Add(this.label1);
-            this.Name = "FrmDanhSachDiem";
+            this.Name = "FrmDSDiem";
             this.Text = "FrmDanhSachDiem";
+            this.Load += new System.EventHandler(this.FrmDSDiem_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachDiem)).EndInit();

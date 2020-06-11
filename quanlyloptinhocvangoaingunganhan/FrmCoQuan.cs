@@ -142,10 +142,10 @@ namespace quanlyloptinhocvangoaingunganhan
 
         private void dataGridViewCoQuan_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            txtMaCQ.Text = dataGridViewCoQuan.CurrentRow.Cells["MaCQ"].Value.ToString();
-            txtTenCQ.Text = dataGridViewCoQuan.CurrentRow.Cells["TenCQ"].Value.ToString();
-            txtDiaChi.Text = dataGridViewCoQuan.CurrentRow.Cells["DiaChi"].Value.ToString();
-            txtDienThoai.Text = dataGridViewCoQuan.CurrentRow.Cells["DienThoai"].Value.ToString();
+            txtMaCQ.Text = dataGridViewCoQuan.CurrentRow.Cells["MaCoQuan"].Value.ToString();
+            txtTenCQ.Text = dataGridViewCoQuan.CurrentRow.Cells["TenCoQuan"].Value.ToString();
+            txtDiaChi.Text = dataGridViewCoQuan.CurrentRow.Cells["cqDiaChi"].Value.ToString();
+            txtDienThoai.Text = dataGridViewCoQuan.CurrentRow.Cells["cqDienThoai"].Value.ToString();
         }
 
         private void frmCoquan_Load(object sender, EventArgs e)

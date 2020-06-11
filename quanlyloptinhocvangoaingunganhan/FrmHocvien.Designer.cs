@@ -186,7 +186,7 @@
             // cboNgay
             // 
             this.cboNgay.FormattingEnabled = true;
-            this.cboNgay.Location = new System.Drawing.Point(566, 83);
+            this.cboNgay.Location = new System.Drawing.Point(592, 83);
             this.cboNgay.Name = "cboNgay";
             this.cboNgay.Size = new System.Drawing.Size(76, 24);
             this.cboNgay.TabIndex = 14;
@@ -194,17 +194,17 @@
             // cboThang
             // 
             this.cboThang.FormattingEnabled = true;
-            this.cboThang.Location = new System.Drawing.Point(666, 83);
+            this.cboThang.Location = new System.Drawing.Point(708, 83);
             this.cboThang.Name = "cboThang";
-            this.cboThang.Size = new System.Drawing.Size(90, 24);
+            this.cboThang.Size = new System.Drawing.Size(76, 24);
             this.cboThang.TabIndex = 15;
             // 
             // cboNam
             // 
             this.cboNam.FormattingEnabled = true;
-            this.cboNam.Location = new System.Drawing.Point(784, 83);
+            this.cboNam.Location = new System.Drawing.Point(828, 83);
             this.cboNam.Name = "cboNam";
-            this.cboNam.Size = new System.Drawing.Size(93, 24);
+            this.cboNam.Size = new System.Drawing.Size(76, 24);
             this.cboNam.TabIndex = 16;
             // 
             // cboMalop

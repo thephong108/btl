@@ -84,6 +84,7 @@
             this.btnXem.TabIndex = 2;
             this.btnXem.Text = "Xem";
             this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click_1);
             // 
             // dtpDen
             // 
@@ -134,6 +135,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmBaoCaoDoanhThu";
             this.Text = "FrmBaoCaoDoanhThu";
+            this.Load += new System.EventHandler(this.FrmBaoCaoDoanhThu_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaoCaoDoanhThu)).EndInit();

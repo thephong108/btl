@@ -52,7 +52,7 @@ namespace quanlyloptinhocvangoaingunganhan
             {
                 cboThang1.Items.Add(i.ToString());
             }
-            for (int i = 1980; i <= 2030; i++)
+            for (int i = 2019; i <= 2030; i++)
             {
                 cboNam1.Items.Add(i.ToString());
             }
@@ -172,9 +172,8 @@ namespace quanlyloptinhocvangoaingunganhan
                 NgayNopHocPhi = String.Format("{1}/{0}/{2}", cboNgay1.Text, cboThang1.Text, cboNam1.Text);
 
                 string sql = "insert into tblHocvien values('" + txtMaHV.Text.Trim() + "',N'" + txtTenHV.Text.Trim()
-                    + "','" + cboMalop.SelectedValue.ToString()
-
-                    + "','" + Ngaysinh + "',N'" + cboGioitinh.Text.Trim() + "',N'" + txtDiachi.Text.Trim() + "','" + cboManghe.SelectedValue.ToString()
+                    + "','" + cboMalop.SelectedValue.ToString()  + "','" +  Ngaysinh + "',N'" + cboGioitinh.Text.Trim() 
+                    + "',N'" + txtDiachi.Text.Trim() + "','" + cboManghe.SelectedValue.ToString()
 
                     + "','"+ txtSDT.Text.Trim() + "','" + NgayNopHocPhi + "','" + txtDiem.Text.Trim()+"')";
 
@@ -284,9 +283,11 @@ namespace quanlyloptinhocvangoaingunganhan
            "',DienThoai=N'" + txtSDT.Text.Trim() +
            "',Diem=N'" + txtDiem.Text.Trim() +
            "'WHERE MaHocVien='" + txtMaHV.Text.Trim() + "'";
-                
+
+         
+
             DAO.OpenConnection();
-            
+           
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = sql;
             cmd.Connection = DAO.conn;

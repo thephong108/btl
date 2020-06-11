@@ -76,6 +76,12 @@ namespace quanlyloptinhocvangoaingunganhan
             FrmLophoc f1 = new FrmLophoc();
             f1.Show();
         }
+
+        private void mônHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMonHoc f1 = new FrmMonHoc();
+            f1.Show();
+        }
     }
     }
     

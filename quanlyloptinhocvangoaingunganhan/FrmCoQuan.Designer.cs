@@ -40,8 +40,8 @@
             this.dataGridViewCoQuan = new System.Windows.Forms.DataGridView();
             this.MaCoQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenCoQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cqDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cqDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienThoai = new System.Windows.Forms.Label();
             this.DiaChi = new System.Windows.Forms.Label();
             this.TenCQ = new System.Windows.Forms.Label();
@@ -136,8 +136,8 @@
             this.dataGridViewCoQuan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaCoQuan,
             this.TenCoQuan,
-            this.clDiaChi,
-            this.clDienThoai});
+            this.cqDiaChi,
+            this.cqDienThoai});
             this.dataGridViewCoQuan.Location = new System.Drawing.Point(130, 195);
             this.dataGridViewCoQuan.Name = "dataGridViewCoQuan";
             this.dataGridViewCoQuan.RowHeadersWidth = 51;
@@ -162,21 +162,21 @@
             this.TenCoQuan.Name = "TenCoQuan";
             this.TenCoQuan.Width = 125;
             // 
-            // clDiaChi
+            // cqDiaChi
             // 
-            this.clDiaChi.DataPropertyName = "DiaChi";
-            this.clDiaChi.HeaderText = "Địa Chỉ";
-            this.clDiaChi.MinimumWidth = 6;
-            this.clDiaChi.Name = "clDiaChi";
-            this.clDiaChi.Width = 125;
+            this.cqDiaChi.DataPropertyName = "DiaChi";
+            this.cqDiaChi.HeaderText = "Địa Chỉ";
+            this.cqDiaChi.MinimumWidth = 6;
+            this.cqDiaChi.Name = "cqDiaChi";
+            this.cqDiaChi.Width = 125;
             // 
-            // clDienThoai
+            // cqDienThoai
             // 
-            this.clDienThoai.DataPropertyName = "DienThoai";
-            this.clDienThoai.HeaderText = "Điện thoại ";
-            this.clDienThoai.MinimumWidth = 6;
-            this.clDienThoai.Name = "clDienThoai";
-            this.clDienThoai.Width = 125;
+            this.cqDienThoai.DataPropertyName = "DienThoai";
+            this.cqDienThoai.HeaderText = "Điện thoại ";
+            this.cqDienThoai.MinimumWidth = 6;
+            this.cqDienThoai.Name = "cqDienThoai";
+            this.cqDienThoai.Width = 125;
             // 
             // DienThoai
             // 
@@ -244,7 +244,7 @@
             this.Controls.Add(this.MaCQ);
             this.Controls.Add(this.label1);
             this.Name = "frmCoquan";
-            this.Text = "Form1";
+            this.Text = "FrmCoquan";
             this.Load += new System.EventHandler(this.frmCoquan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCoQuan)).EndInit();
             this.ResumeLayout(false);
@@ -264,14 +264,14 @@
         private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.Button btnthem;
         private System.Windows.Forms.DataGridView dataGridViewCoQuan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaCoQuan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenCoQuan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clDiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clDienThoai;
         private System.Windows.Forms.Label DienThoai;
         private System.Windows.Forms.Label DiaChi;
         private System.Windows.Forms.Label TenCQ;
         private System.Windows.Forms.Label MaCQ;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCoQuan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenCoQuan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cqDiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cqDienThoai;
     }
 }

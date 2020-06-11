@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace quanlyloptinhocvangoaingunganhan
 {
@@ -26,13 +28,14 @@ namespace quanlyloptinhocvangoaingunganhan
 
         }
 
-        DataTable tbl;
+        
         private void Load_dgv()
         {
+            DAO.OpenConnection();
             string sql;
-            sql = "Select a.MaLop,a.TenLop,a.MaMon,a.Siso (b.HocPhi * a.Siso) as tong from tblLopHoc a join tblMonHoc b on a.MaMon = b.MaMon where a.NgayBD between N'" + DAO.ConvertDateTime(dtpTu.Text) + "' and N'" + DAO.ConvertDateTime(dtpDen.Text) + "' group by a.MaLop, a.TenLop, a.MaMon,a.Siso";
-            tbl = DAO.GetDataToTable(sql);
-            dgvBaoCaoDoanhThu.DataSource = tbl;
+            sql = "Select tblLophoc.MaLop,tblLophoc.TenLop,tblLophoc.MaMon,tblLophoc.SiSo (tblMonhoc.HocPhi * tblLophoc.SiSo) as Tong from tblLopHoc  join tblMonHoc  on tblLophoc.MaMon = tblMonhoc.MaMon where tblLophoc.NgayBD between N'" + DAO.ConvertDateTime(dtpTu.Text) + "' and N'" + DAO.ConvertDateTime(dtpDen.Text) + "' group by tblLophoc.MaLop, tblLophoc.TenLop, tblLophoc.MaMon,tblLophoc.SiSo";
+          
+         
             dgvBaoCaoDoanhThu.Columns[0].HeaderText = "Mã Lớp";
             dgvBaoCaoDoanhThu.Columns[1].HeaderText = "Tên Lớp";
             dgvBaoCaoDoanhThu.Columns[2].HeaderText = "Mã Môn";
@@ -44,7 +47,13 @@ namespace quanlyloptinhocvangoaingunganhan
             dgvBaoCaoDoanhThu.Columns[2].Width = 100;
             dgvBaoCaoDoanhThu.Columns[3].Width = 100;
             dgvBaoCaoDoanhThu.Columns[4].Width = 100;
-
+         
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = sql;
+            cmd.Connection = DAO.conn;
+            cmd.ExecuteNonQuery();
+            DAO.CloseConnection();
+            
             // Không cho phép thêm mới dữ liệu trực tiếp trên lưới
             dgvBaoCaoDoanhThu.AllowUserToAddRows = false;
             // Không cho phép sửa dữ liệu trực tiếp trên lưới
@@ -54,6 +63,16 @@ namespace quanlyloptinhocvangoaingunganhan
         private void dgvBaoCaoDoanhThu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void FrmBaoCaoDoanhThu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXem_Click_1(object sender, EventArgs e)
+        {
+            Load_dgv();
         }
     }
 }

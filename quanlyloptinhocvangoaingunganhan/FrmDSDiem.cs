@@ -52,5 +52,10 @@ namespace quanlyloptinhocvangoaingunganhan
             cboMaLop.ValueMember = "MaLop";
             cboMaLop.SelectedIndex = -1;
         }
+
+        private void FrmDSDiem_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

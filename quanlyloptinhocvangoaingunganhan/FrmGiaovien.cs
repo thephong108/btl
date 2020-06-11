@@ -9,35 +9,39 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.IO;
+
+
 
 namespace quanlyloptinhocvangoaingunganhan
 {
     public partial class FrmGiaovien : Form
     {
+    
         public FrmGiaovien()
         {
             InitializeComponent();
+         
         }
 
-        private void btnopen_Click(object sender, EventArgs e)
+
+
+        public void btnopen_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlgOpen = new OpenFileDialog();
             dlgOpen.Filter = "Ảnh jpg|*.jpg|Ảnh bitmap|*.bmp|All files|*.*";
-            dlgOpen.InitialDirectory = "D:\\Pictures";
+            dlgOpen.InitialDirectory = "D:\\";
             dlgOpen.FilterIndex = 1;
             dlgOpen.Title = "Chọn ảnh";
             if (dlgOpen.ShowDialog() == DialogResult.OK)
             {
-                txtAnh.Text = dlgOpen.FileName;
                 picAnh.Image = Image.FromFile(dlgOpen.FileName);
+                txtAnh.Text = dlgOpen.FileName;
+              
+
             }
         }
 
-        private void txtAnh_TextChanged(object sender, EventArgs e)
-        {
-            if (txtAnh.Text != "")
-                picAnh.Image = Image.FromFile(txtAnh.Text);
-        }
 
         private void FrmGiaovien_Load(object sender, EventArgs e)
         {
@@ -64,10 +68,12 @@ namespace quanlyloptinhocvangoaingunganhan
             cboThang.SelectedIndex = -1;
             cboNam.SelectedIndex = -1;
 
-         
+
 
             cboGioitinh.Items.Add("Nam");
             cboGioitinh.Items.Add("Nữ");
+
+        
         }
         private void LoaddatatoGridview()
         {
@@ -141,7 +147,7 @@ namespace quanlyloptinhocvangoaingunganhan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            txtMaGV.Enabled = true;
+           
             //xoa du lieu trong text box
             txtMaGV.Text = "";
             txtTenGV.Text = "";
@@ -155,20 +161,23 @@ namespace quanlyloptinhocvangoaingunganhan
             cboMachuyenmon.SelectedIndex = -1;
             cboMaCQ.SelectedIndex = -1;
             cboMatrinhdo.SelectedIndex = -1;
+            txtMaGV.Enabled = true;
+          
+            picAnh.Image = null;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             string Ngaysinh;
             Ngaysinh = String.Format("{1}/{0}/{2}", cboNgay.Text, cboThang.Text, cboNam.Text);
-           
 
-            string sql = "UPDATE tblGiaovien SET TenGv = N'" + txtTenGV.Text.Trim() + "', Machudanh='" + cboMachucdanh.Text.Trim() 
+
+            string sql = "UPDATE tblGiaovien SET TenGv = N'" + txtTenGV.Text.Trim() + "', MaChucDanh='" + cboMachucdanh.Text.Trim()
                 + "',NgaySinh='" + Ngaysinh + "', MaChuyenMon='" + cboMachuyenmon.Text.Trim() +
 
-           "', Gioitinh=N'" + cboGioitinh.Text.Trim() + "',Diachi=N'" + txtDiachi.Text.Trim() + "',MaCQ=N'" + cboMaCQ.SelectedText.ToString() +
-           "',DienThoai=N'" + txtSDT.Text.Trim() + "', Matrinhdo='" + cboMatrinhdo.Text.Trim() +
-           "',Anh=N'" + txtAnh.Text.Trim() +
+           "', Gioitinh=N'" + cboGioitinh.Text.Trim() + "',Diachi=N'" + txtDiachi.Text.Trim() + "',MaCQ=N'" + cboMaCQ.Text.Trim() +
+           "',DienThoai=N'" + txtSDT.Text.Trim() + "',Matrinhdo='" + cboMatrinhdo.Text.Trim() +
+           "',Anh='" + txtAnh.Text.Trim() +
            "'WHERE MaGV='" + txtMaGV.Text.Trim() + "'";
 
             DAO.OpenConnection();
@@ -186,13 +195,13 @@ namespace quanlyloptinhocvangoaingunganhan
 
             if (txtMaGV.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập mã học viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa nhập mã giáo viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaGV.Focus();
                 return;
             }
             if (txtTenGV.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập tên học viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa nhập tên giáo viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenGV.Focus();
                 return;
             }
@@ -248,7 +257,7 @@ namespace quanlyloptinhocvangoaingunganhan
                 MessageBox.Show("Bạn chưa chọn Mã trình độ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string sqlCheckkey = "Select * from tblHocvien where MaHocVien = '" + txtMaGV.Text.Trim() + "'";
+            string sqlCheckkey = "Select * from tblGiaovien where MaGV = '" + txtMaGV.Text.Trim() + "'";
             DAO.OpenConnection();
 
             if (DAO.checkKeyexit(sqlCheckkey))
@@ -262,20 +271,22 @@ namespace quanlyloptinhocvangoaingunganhan
             {
                 string Ngaysinh;
                 Ngaysinh = String.Format("{1}/{0}/{2}", cboNgay.Text, cboThang.Text, cboNam.Text);
-     
+              
+                
 
-                string sql = "insert into tblHocvien values('" + txtMaGV.Text.Trim() + "',N'" + txtTenGV.Text.Trim()
-                    + "','" + cboMachucdanh.SelectedValue.ToString()
+                string sql = "insert into tblGiaovien values('" + txtMaGV.Text.Trim() + "',N'" + txtTenGV.Text.Trim() + "','" + Ngaysinh
+                      + "',N'" + cboGioitinh.Text.Trim() + "',N'" + txtDiachi.Text.Trim() + "','" + txtSDT.Text.Trim()
+                    + "','" + cboMachucdanh.SelectedValue.ToString() + "','" + cboMachuyenmon.SelectedValue.ToString()
 
-                    + "','" + Ngaysinh + "',N'" + cboGioitinh.Text.Trim() + "',N'" + txtDiachi.Text.Trim() + "','" + cboMachuyenmon.SelectedValue.ToString()
-
-                    + "','" + txtSDT.Text.Trim()  + "','" +cboMaCQ.SelectedIndex.ToString() + "','" + cboMatrinhdo.SelectedIndex.ToString() + "')";
+                   + "','" + cboMaCQ.Text.Trim() + "','" + cboMatrinhdo.Text.Trim() + "','" + txtAnh.Text.Trim() + "')";
 
                 SqlCommand cmd = new SqlCommand(sql, DAO.conn);
                 cmd.ExecuteNonQuery();
                 LoaddatatoGridview();
                 filldatatocombo();
                 filldatatocombo1();
+                filldatatocombo2();
+                filldatatocombo3();
                 DAO.CloseConnection();
 
             }
@@ -283,7 +294,7 @@ namespace quanlyloptinhocvangoaingunganhan
 
         private void gridviewGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-          
+           
             txtMaGV.Enabled = false;
             txtTenGV.Text = gridviewGV.CurrentRow.Cells["TenGV"].Value.ToString();
             cboMachucdanh.Text = gridviewGV.CurrentRow.Cells["Machucdanh"].Value.ToString();
@@ -300,6 +311,8 @@ namespace quanlyloptinhocvangoaingunganhan
             cboNam.Text = year[0];
             txtAnh.Text = gridviewGV.CurrentRow.Cells["Anh"].Value.ToString();
             cboGioitinh.Text = gridviewGV.CurrentRow.Cells["Gioitinh"].Value.ToString();
+
+
         }
 
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
@@ -313,7 +326,7 @@ namespace quanlyloptinhocvangoaingunganhan
         private void btnXoa_Click(object sender, EventArgs e)
         {
 
-            string sql = "delete from tblGiaovien where MaGV = '" + txtMaGV.Text + "'";
+            string sql = "DELETE from tblGiaovien where MaGV = '" + txtMaGV.Text + "'";
             DAO.OpenConnection();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = sql;
@@ -327,5 +340,14 @@ namespace quanlyloptinhocvangoaingunganhan
         {
             this.Close();
         }
+
+        private void txtAnh_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAnh.Text != "")
+                picAnh.Image = Image.FromFile(txtAnh.Text);
+        }
+      
+     
+
     }
 }

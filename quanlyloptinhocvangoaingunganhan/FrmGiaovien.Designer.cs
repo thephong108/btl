@@ -56,10 +56,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.picAnh = new System.Windows.Forms.PictureBox();
             this.btnopen = new System.Windows.Forms.Button();
             this.txtAnh = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.picAnh = new System.Windows.Forms.PictureBox();
             this.MaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +67,7 @@
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaChucDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Machuyenmon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaCQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Matrinhdo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Anh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,13 +144,14 @@
             this.SDT,
             this.Diachi,
             this.MaChucDanh,
+            this.Machuyenmon,
             this.MaCQ,
             this.Matrinhdo,
             this.Anh});
-            this.gridviewGV.Location = new System.Drawing.Point(19, 349);
+            this.gridviewGV.Location = new System.Drawing.Point(53, 343);
             this.gridviewGV.Name = "gridviewGV";
             this.gridviewGV.RowTemplate.Height = 24;
-            this.gridviewGV.Size = new System.Drawing.Size(1034, 184);
+            this.gridviewGV.Size = new System.Drawing.Size(1148, 184);
             this.gridviewGV.TabIndex = 54;
             this.gridviewGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewGV_CellClick);
             // 
@@ -328,16 +330,6 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "Mã Giáo Viên";
             // 
-            // picAnh
-            // 
-            this.picAnh.Location = new System.Drawing.Point(1042, 17);
-            this.picAnh.Margin = new System.Windows.Forms.Padding(4);
-            this.picAnh.Name = "picAnh";
-            this.picAnh.Size = new System.Drawing.Size(200, 174);
-            this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAnh.TabIndex = 61;
-            this.picAnh.TabStop = false;
-            // 
             // btnopen
             // 
             this.btnopen.Location = new System.Drawing.Point(1142, 218);
@@ -367,6 +359,16 @@
             this.label11.Size = new System.Drawing.Size(33, 17);
             this.label11.TabIndex = 64;
             this.label11.Text = "Ảnh";
+            // 
+            // picAnh
+            // 
+            this.picAnh.Location = new System.Drawing.Point(1042, 12);
+            this.picAnh.Margin = new System.Windows.Forms.Padding(4);
+            this.picAnh.Name = "picAnh";
+            this.picAnh.Size = new System.Drawing.Size(209, 179);
+            this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAnh.TabIndex = 65;
+            this.picAnh.TabStop = false;
             // 
             // MaGV
             // 
@@ -410,6 +412,12 @@
             this.MaChucDanh.HeaderText = "Mã Chức Danh";
             this.MaChucDanh.Name = "MaChucDanh";
             // 
+            // Machuyenmon
+            // 
+            this.Machuyenmon.DataPropertyName = "MaChuyenMon";
+            this.Machuyenmon.HeaderText = "Mã chuyên môn";
+            this.Machuyenmon.Name = "Machuyenmon";
+            // 
             // MaCQ
             // 
             this.MaCQ.DataPropertyName = "MaCQ";
@@ -433,10 +441,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1306, 752);
+            this.Controls.Add(this.picAnh);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtAnh);
             this.Controls.Add(this.btnopen);
-            this.Controls.Add(this.picAnh);
             this.Controls.Add(this.cboMaCQ);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLuu);
@@ -505,10 +513,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox picAnh;
         private System.Windows.Forms.Button btnopen;
         private System.Windows.Forms.TextBox txtAnh;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox picAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ngaysinh;
@@ -516,6 +524,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaChucDanh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Machuyenmon;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn Matrinhdo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anh;

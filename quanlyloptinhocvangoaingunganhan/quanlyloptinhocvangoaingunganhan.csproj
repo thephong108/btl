@@ -89,11 +89,29 @@
     <Compile Include="FrmHocvien.Designer.cs">
       <DependentUpon>FrmHocvien.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMonHoc.Designer.cs">
+      <DependentUpon>FrmMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNgheNghiep.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmNgheNghiep.Designer.cs">
       <DependentUpon>FrmNgheNghiep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTimKiemGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTimKiemGiaoVien.Designer.cs">
+      <DependentUpon>FrmTimKiemGiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTimKiemLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTimKiemLopHoc.Designer.cs">
+      <DependentUpon>FrmTimKiemLopHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,11 +127,17 @@
     <EmbeddedResource Include="FrmGiaovien.resx">
       <DependentUpon>FrmGiaovien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLophoc.resx">
+      <DependentUpon>FrmLophoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHocvien.resx">
       <DependentUpon>FrmHocvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMonHoc.resx">
+      <DependentUpon>FrmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNgheNghiep.resx">
       <DependentUpon>FrmNgheNghiep.cs</DependentUpon>
@@ -139,6 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

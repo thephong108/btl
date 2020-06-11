@@ -36,6 +36,7 @@
             this.phòngHọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cơQuanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nghềNghiệpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mônHọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSachDiemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSáchĐiểmTheoLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lopHocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +74,8 @@
             this.giaoVieToolStripMenuItem,
             this.phòngHọcToolStripMenuItem,
             this.cơQuanToolStripMenuItem,
-            this.nghềNghiệpToolStripMenuItem});
+            this.nghềNghiệpToolStripMenuItem,
+            this.mônHọcToolStripMenuItem});
             this.cacDanhMucToolStripMenuItem.Name = "cacDanhMucToolStripMenuItem";
             this.cacDanhMucToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.cacDanhMucToolStripMenuItem.Text = "Các Danh Mục";
@@ -81,36 +83,43 @@
             // hocVienToolStripMenuItem
             // 
             this.hocVienToolStripMenuItem.Name = "hocVienToolStripMenuItem";
-            this.hocVienToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.hocVienToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.hocVienToolStripMenuItem.Text = "Học Viên";
             this.hocVienToolStripMenuItem.Click += new System.EventHandler(this.hocVienToolStripMenuItem_Click);
             // 
             // giaoVieToolStripMenuItem
             // 
             this.giaoVieToolStripMenuItem.Name = "giaoVieToolStripMenuItem";
-            this.giaoVieToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.giaoVieToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.giaoVieToolStripMenuItem.Text = "Giáo Viên";
             this.giaoVieToolStripMenuItem.Click += new System.EventHandler(this.giaoVieToolStripMenuItem_Click);
             // 
             // phòngHọcToolStripMenuItem
             // 
             this.phòngHọcToolStripMenuItem.Name = "phòngHọcToolStripMenuItem";
-            this.phòngHọcToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.phòngHọcToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.phòngHọcToolStripMenuItem.Text = "Phòng Học";
             // 
             // cơQuanToolStripMenuItem
             // 
             this.cơQuanToolStripMenuItem.Name = "cơQuanToolStripMenuItem";
-            this.cơQuanToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.cơQuanToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.cơQuanToolStripMenuItem.Text = "Cơ quan";
             this.cơQuanToolStripMenuItem.Click += new System.EventHandler(this.cơQuanToolStripMenuItem_Click);
             // 
             // nghềNghiệpToolStripMenuItem
             // 
             this.nghềNghiệpToolStripMenuItem.Name = "nghềNghiệpToolStripMenuItem";
-            this.nghềNghiệpToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.nghềNghiệpToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.nghềNghiệpToolStripMenuItem.Text = "Nghề Nghiệp";
             this.nghềNghiệpToolStripMenuItem.Click += new System.EventHandler(this.nghềNghiệpToolStripMenuItem_Click);
+            // 
+            // mônHọcToolStripMenuItem
+            // 
+            this.mônHọcToolStripMenuItem.Name = "mônHọcToolStripMenuItem";
+            this.mônHọcToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.mônHọcToolStripMenuItem.Text = "Môn Học";
+            this.mônHọcToolStripMenuItem.Click += new System.EventHandler(this.mônHọcToolStripMenuItem_Click);
             // 
             // danhSachDiemToolStripMenuItem
             // 
@@ -228,6 +237,7 @@
         private System.Windows.Forms.ToolStripMenuItem tìmKiếmGiáoViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cơQuanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nghềNghiệpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mônHọcToolStripMenuItem;
     }
 }
 
