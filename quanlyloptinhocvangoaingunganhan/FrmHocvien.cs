@@ -73,6 +73,7 @@ namespace quanlyloptinhocvangoaingunganhan
         private void btnThem_Click(object sender, EventArgs e)
         {
             txtMaHV.Enabled = true;
+            txtMaHV.Focus();
             //xoa du lieu trong text box
             txtMaHV.Text = "";
             txtTenHV.Text = "";
@@ -177,13 +178,20 @@ namespace quanlyloptinhocvangoaingunganhan
 
                     + "','"+ txtSDT.Text.Trim() + "','" + NgayNopHocPhi + "','" + txtDiem.Text.Trim()+"')";
 
+
+
+                double sl = Convert.ToDouble(DAO.DocBang("SELECT SiSo FROM tblLophoc WHERE MaLop=N'" + cboMalop.Text + "'").Rows[0][0].ToString());//XEM LẠI BẢNG NL ĐÃ CÓ SL CHƯA
+                double slmoi = sl + 1;
+                sql = "UPDATE tblLophoc SET SiSo = " + slmoi + " WHERE MaLop = N'" + cboMalop.Text + "'";
+                DAO.CapNhatDuLieu(sql);
+
                 SqlCommand cmd = new SqlCommand(sql, DAO.conn);
                 cmd.ExecuteNonQuery();
                 LoaddatatoGridview();
                 filldatatocombo();
                 filldatatocombo1();
                 DAO.CloseConnection();
-
+             
             }
         }
         private void LoaddatatoGridview()
@@ -247,7 +255,8 @@ namespace quanlyloptinhocvangoaingunganhan
 
         private void gridviewHV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+            int numrow;
+            numrow = e.RowIndex;
             txtMaHV.Enabled = false;
             txtTenHV.Text = gridviewHV.CurrentRow.Cells["TenHV"].Value.ToString();
             txtDiem.Text = gridviewHV.CurrentRow.Cells["Diem"].Value.ToString();
@@ -284,16 +293,19 @@ namespace quanlyloptinhocvangoaingunganhan
            "',Diem=N'" + txtDiem.Text.Trim() +
            "'WHERE MaHocVien='" + txtMaHV.Text.Trim() + "'";
 
-         
-
             DAO.OpenConnection();
-           
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = sql;
             cmd.Connection = DAO.conn;
             cmd.ExecuteNonQuery();
             DAO.CloseConnection();
+            string sql1;
+            double sl = Convert.ToDouble(DAO.DocBang("select  count(MaHocVien) from tblHocvien  join tblLophoc on tblLophoc.MaLop=tblHocvien.MaLop where tblLophoc.MaLop =N'" + cboMalop.Text + "'").Rows[0][0].ToString());
+
+            sql1 = "UPDATE tblLophoc SET SiSo = " + sl + " WHERE MaLop = N'" + cboMalop.Text.Trim() + "'";
+            DAO.CapNhatDuLieu(sql1);
             LoaddatatoGridview();
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -306,6 +318,17 @@ namespace quanlyloptinhocvangoaingunganhan
             cmd.ExecuteNonQuery();
             DAO.CloseConnection();
             LoaddatatoGridview();
+            string sql1;
+            double sl = Convert.ToDouble(DAO.DocBang("select  count(MaHocVien) from tblHocvien  join tblLophoc on tblLophoc.MaLop=tblHocvien.MaLop where tblLophoc.MaLop =N'" + cboMalop.Text + "'").Rows[0][0].ToString());
+
+            sql1 = "UPDATE tblLophoc SET SiSo = " + sl + " WHERE MaLop = N'" + cboMalop.Text.Trim() + "'";
+            DAO.CapNhatDuLieu(sql1);
+            LoaddatatoGridview();
+        }
+
+        private void gridviewHV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

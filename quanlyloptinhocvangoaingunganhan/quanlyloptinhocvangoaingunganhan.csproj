@@ -53,6 +53,12 @@
     <Compile Include="FrmBaoCaoDoanhThu.Designer.cs">
       <DependentUpon>FrmBaoCaoDoanhThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmChuyenmon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChuyenmon.Designer.cs">
+      <DependentUpon>FrmChuyenmon.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCoQuan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     </Compile>
     <Compile Include="FrmDSDiem.Designer.cs">
       <DependentUpon>FrmDSDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDSHVTheoLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDSHVTheoLop.Designer.cs">
+      <DependentUpon>FrmDSHVTheoLop.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGiaovien.cs">
       <SubType>Form</SubType>
@@ -101,6 +113,12 @@
     <Compile Include="FrmNgheNghiep.Designer.cs">
       <DependentUpon>FrmNgheNghiep.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPhonghoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPhonghoc.Designer.cs">
+      <DependentUpon>FrmPhonghoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTimKiemGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,16 +131,28 @@
     <Compile Include="FrmTimKiemLopHoc.Designer.cs">
       <DependentUpon>FrmTimKiemLopHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTkLophoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTkLophoc.Designer.cs">
+      <DependentUpon>FrmTkLophoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmBaoCaoDoanhThu.resx">
       <DependentUpon>FrmBaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChuyenmon.resx">
+      <DependentUpon>FrmChuyenmon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCoQuan.resx">
       <DependentUpon>FrmCoQuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDSDiem.resx">
       <DependentUpon>FrmDSDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDSHVTheoLop.resx">
+      <DependentUpon>FrmDSHVTheoLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGiaovien.resx">
       <DependentUpon>FrmGiaovien.cs</DependentUpon>
@@ -141,6 +171,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNgheNghiep.resx">
       <DependentUpon>FrmNgheNghiep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPhonghoc.resx">
+      <DependentUpon>FrmPhonghoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTimKiemGiaoVien.resx">
+      <DependentUpon>FrmTimKiemGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTimKiemLopHoc.resx">
+      <DependentUpon>FrmTimKiemLopHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

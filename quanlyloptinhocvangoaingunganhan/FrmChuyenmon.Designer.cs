@@ -1,6 +1,6 @@
 ﻿namespace quanlyloptinhocvangoaingunganhan
 {
-    partial class FrmMonHoc
+    partial class FrmChuyenmon
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTenmon = new System.Windows.Forms.TextBox();
-            this.txtMamon = new System.Windows.Forms.TextBox();
-            this.gridviewMon = new System.Windows.Forms.DataGridView();
-            this.Mamon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tenmon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hocphi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTenchuyenmon = new System.Windows.Forms.TextBox();
+            this.txtMachuyenmon = new System.Windows.Forms.TextBox();
+            this.gridviewCMon = new System.Windows.Forms.DataGridView();
             this.btnthoat = new System.Windows.Forms.Button();
             this.btnluu = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
@@ -42,62 +39,37 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtHocphi = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gridviewMon)).BeginInit();
+            this.Machuyenmon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenChuyenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridviewCMon)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtTenmon
+            // txtTenchuyenmon
             // 
-            this.txtTenmon.Location = new System.Drawing.Point(489, 112);
-            this.txtTenmon.Name = "txtTenmon";
-            this.txtTenmon.Size = new System.Drawing.Size(209, 22);
-            this.txtTenmon.TabIndex = 32;
+            this.txtTenchuyenmon.Location = new System.Drawing.Point(529, 109);
+            this.txtTenchuyenmon.Name = "txtTenchuyenmon";
+            this.txtTenchuyenmon.Size = new System.Drawing.Size(209, 22);
+            this.txtTenchuyenmon.TabIndex = 45;
             // 
-            // txtMamon
+            // txtMachuyenmon
             // 
-            this.txtMamon.Location = new System.Drawing.Point(205, 112);
-            this.txtMamon.Name = "txtMamon";
-            this.txtMamon.Size = new System.Drawing.Size(100, 22);
-            this.txtMamon.TabIndex = 31;
+            this.txtMachuyenmon.Location = new System.Drawing.Point(230, 109);
+            this.txtMachuyenmon.Name = "txtMachuyenmon";
+            this.txtMachuyenmon.Size = new System.Drawing.Size(100, 22);
+            this.txtMachuyenmon.TabIndex = 44;
             // 
-            // gridviewMon
+            // gridviewCMon
             // 
-            this.gridviewMon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridviewMon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Mamon,
-            this.Tenmon,
-            this.Hocphi});
-            this.gridviewMon.Location = new System.Drawing.Point(105, 187);
-            this.gridviewMon.Name = "gridviewMon";
-            this.gridviewMon.RowHeadersWidth = 51;
-            this.gridviewMon.RowTemplate.Height = 24;
-            this.gridviewMon.Size = new System.Drawing.Size(593, 150);
-            this.gridviewMon.TabIndex = 30;
-            this.gridviewMon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewMon_CellClick);
-            this.gridviewMon.Click += new System.EventHandler(this.gridviewMon_Click);
-            // 
-            // Mamon
-            // 
-            this.Mamon.DataPropertyName = "MaMon";
-            this.Mamon.HeaderText = "Mã môn";
-            this.Mamon.MinimumWidth = 6;
-            this.Mamon.Name = "Mamon";
-            this.Mamon.Width = 125;
-            // 
-            // Tenmon
-            // 
-            this.Tenmon.DataPropertyName = "TenMon";
-            this.Tenmon.HeaderText = "Tên môn";
-            this.Tenmon.MinimumWidth = 6;
-            this.Tenmon.Name = "Tenmon";
-            this.Tenmon.Width = 300;
-            // 
-            // Hocphi
-            // 
-            this.Hocphi.DataPropertyName = "HocPhi";
-            this.Hocphi.HeaderText = "Học phí";
-            this.Hocphi.Name = "Hocphi";
+            this.gridviewCMon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridviewCMon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Machuyenmon,
+            this.TenChuyenMon});
+            this.gridviewCMon.Location = new System.Drawing.Point(105, 187);
+            this.gridviewCMon.Name = "gridviewCMon";
+            this.gridviewCMon.RowHeadersWidth = 51;
+            this.gridviewCMon.RowTemplate.Height = 24;
+            this.gridviewCMon.Size = new System.Drawing.Size(593, 150);
+            this.gridviewCMon.TabIndex = 43;
             // 
             // btnthoat
             // 
@@ -105,7 +77,7 @@
             this.btnthoat.Location = new System.Drawing.Point(623, 392);
             this.btnthoat.Name = "btnthoat";
             this.btnthoat.Size = new System.Drawing.Size(75, 23);
-            this.btnthoat.TabIndex = 29;
+            this.btnthoat.TabIndex = 42;
             this.btnthoat.Text = "Thoát";
             this.btnthoat.UseVisualStyleBackColor = true;
             this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
@@ -115,7 +87,7 @@
             this.btnluu.Location = new System.Drawing.Point(499, 393);
             this.btnluu.Name = "btnluu";
             this.btnluu.Size = new System.Drawing.Size(75, 23);
-            this.btnluu.TabIndex = 28;
+            this.btnluu.TabIndex = 41;
             this.btnluu.Text = "Lưu";
             this.btnluu.UseVisualStyleBackColor = true;
             this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
@@ -125,7 +97,7 @@
             this.btnxoa.Location = new System.Drawing.Point(365, 392);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(75, 23);
-            this.btnxoa.TabIndex = 27;
+            this.btnxoa.TabIndex = 40;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
@@ -135,7 +107,7 @@
             this.btnsua.Location = new System.Drawing.Point(230, 392);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(75, 23);
-            this.btnsua.TabIndex = 26;
+            this.btnsua.TabIndex = 39;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
             this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
@@ -145,7 +117,7 @@
             this.btnthem.Location = new System.Drawing.Point(105, 393);
             this.btnthem.Name = "btnthem";
             this.btnthem.Size = new System.Drawing.Size(75, 23);
-            this.btnthem.TabIndex = 25;
+            this.btnthem.TabIndex = 38;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
@@ -155,54 +127,52 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(397, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Tên môn";
+            this.label3.Size = new System.Drawing.Size(114, 17);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "Tên chuyên môn";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(102, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Mã môn";
+            this.label2.Size = new System.Drawing.Size(108, 17);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Mã chuyên môn";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(362, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Môn học";
+            this.label1.Size = new System.Drawing.Size(87, 17);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Chuyên môn";
             // 
-            // txtHocphi
+            // Machuyenmon
             // 
-            this.txtHocphi.Location = new System.Drawing.Point(205, 159);
-            this.txtHocphi.Name = "txtHocphi";
-            this.txtHocphi.Size = new System.Drawing.Size(195, 22);
-            this.txtHocphi.TabIndex = 33;
+            this.Machuyenmon.DataPropertyName = "MaChuyenMon";
+            this.Machuyenmon.HeaderText = "Mã chuyên môn";
+            this.Machuyenmon.MinimumWidth = 6;
+            this.Machuyenmon.Name = "Machuyenmon";
+            this.Machuyenmon.Width = 125;
             // 
-            // label4
+            // TenChuyenMon
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(102, 159);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 17);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Học phí";
+            this.TenChuyenMon.DataPropertyName = "TenChuyenMon";
+            this.TenChuyenMon.HeaderText = "Tên chuyên môn";
+            this.TenChuyenMon.MinimumWidth = 6;
+            this.TenChuyenMon.Name = "TenChuyenMon";
+            this.TenChuyenMon.Width = 300;
             // 
-            // FrmMonHoc
+            // FrmChuyenmon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtHocphi);
-            this.Controls.Add(this.txtTenmon);
-            this.Controls.Add(this.txtMamon);
-            this.Controls.Add(this.gridviewMon);
+            this.Controls.Add(this.txtTenchuyenmon);
+            this.Controls.Add(this.txtMachuyenmon);
+            this.Controls.Add(this.gridviewCMon);
             this.Controls.Add(this.btnthoat);
             this.Controls.Add(this.btnluu);
             this.Controls.Add(this.btnxoa);
@@ -211,20 +181,19 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FrmMonHoc";
-            this.Text = "FrmMonHoc";
-            this.Load += new System.EventHandler(this.FrmMonHoc_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridviewMon)).EndInit();
+            this.Name = "FrmChuyenmon";
+            this.Text = "FrmChuyenmon";
+            this.Load += new System.EventHandler(this.FrmChuyenmon_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridviewCMon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtTenmon;
-        private System.Windows.Forms.TextBox txtMamon;
-        private System.Windows.Forms.DataGridView gridviewMon;
+        private System.Windows.Forms.TextBox txtTenchuyenmon;
+        private System.Windows.Forms.TextBox txtMachuyenmon;
+        private System.Windows.Forms.DataGridView gridviewCMon;
         private System.Windows.Forms.Button btnthoat;
         private System.Windows.Forms.Button btnluu;
         private System.Windows.Forms.Button btnxoa;
@@ -233,10 +202,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mamon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tenmon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hocphi;
-        private System.Windows.Forms.TextBox txtHocphi;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Machuyenmon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenChuyenMon;
     }
 }

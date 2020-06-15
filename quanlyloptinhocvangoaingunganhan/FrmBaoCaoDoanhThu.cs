@@ -33,21 +33,23 @@ namespace quanlyloptinhocvangoaingunganhan
         {
             DAO.OpenConnection();
             string sql;
-            sql = "Select tblLophoc.MaLop,tblLophoc.TenLop,tblLophoc.MaMon,tblLophoc.SiSo (tblMonhoc.HocPhi * tblLophoc.SiSo) as Tong from tblLopHoc  join tblMonHoc  on tblLophoc.MaMon = tblMonhoc.MaMon where tblLophoc.NgayBD between N'" + DAO.ConvertDateTime(dtpTu.Text) + "' and N'" + DAO.ConvertDateTime(dtpDen.Text) + "' group by tblLophoc.MaLop, tblLophoc.TenLop, tblLophoc.MaMon,tblLophoc.SiSo";
+            sql = "Select MaLop,tblLophoc.TenLop,tblLophoc.MaMon,tblLophoc.SiSo, tblMonhoc.HocPhi,(tblMonhoc.HocPhi * tblLophoc.SiSo) as Tong from tblLopHoc  join tblMonHoc  on tblLophoc.MaMon = tblMonhoc.MaMon where tblLophoc.NgayBD between N'" + DAO.ConvertDateTime(dtpTu.Text) + "' and N'" + DAO.ConvertDateTime(dtpDen.Text) + "' group by tblLophoc.MaLop, tblLophoc.TenLop, tblLophoc.MaMon,tblLophoc.SiSo";
           
          
             dgvBaoCaoDoanhThu.Columns[0].HeaderText = "Mã Lớp";
             dgvBaoCaoDoanhThu.Columns[1].HeaderText = "Tên Lớp";
             dgvBaoCaoDoanhThu.Columns[2].HeaderText = "Mã Môn";
             dgvBaoCaoDoanhThu.Columns[3].HeaderText = "Sĩ Số";
-            dgvBaoCaoDoanhThu.Columns[4].HeaderText = "Doanh Thu";
+            dgvBaoCaoDoanhThu.Columns[4].HeaderText = "Học Phí";
+            dgvBaoCaoDoanhThu.Columns[5].HeaderText = "Doanh Thu";
 
             dgvBaoCaoDoanhThu.Columns[0].Width = 100;
             dgvBaoCaoDoanhThu.Columns[1].Width = 100;
             dgvBaoCaoDoanhThu.Columns[2].Width = 100;
             dgvBaoCaoDoanhThu.Columns[3].Width = 100;
             dgvBaoCaoDoanhThu.Columns[4].Width = 100;
-         
+            dgvBaoCaoDoanhThu.Columns[5].Width = 100;
+
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = sql;
             cmd.Connection = DAO.conn;

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace quanlyloptinhocvangoaingunganhan
 {
@@ -18,7 +19,7 @@ namespace quanlyloptinhocvangoaingunganhan
         {
             InitializeComponent();
         }
-
+   
         private void FrmLophoc_Load(object sender, EventArgs e)
         {
             DAO.OpenConnection();
@@ -307,6 +308,7 @@ namespace quanlyloptinhocvangoaingunganhan
                 filldatatocombo1();
                 filldatatocombo2();
                 filldatatocombo3();
+       
                 DAO.CloseConnection();
 
             }

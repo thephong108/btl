@@ -1,6 +1,6 @@
 ﻿namespace quanlyloptinhocvangoaingunganhan
 {
-    partial class FrmMonHoc
+    partial class FrmPhonghoc
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTenmon = new System.Windows.Forms.TextBox();
-            this.txtMamon = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDiachi = new System.Windows.Forms.TextBox();
+            this.txtTenPhong = new System.Windows.Forms.TextBox();
+            this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.gridviewMon = new System.Windows.Forms.DataGridView();
-            this.Mamon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tenmon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hocphi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnthoat = new System.Windows.Forms.Button();
             this.btnluu = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
@@ -42,62 +41,56 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtHocphi = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tenphong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewMon)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtTenmon
+            // label4
             // 
-            this.txtTenmon.Location = new System.Drawing.Point(489, 112);
-            this.txtTenmon.Name = "txtTenmon";
-            this.txtTenmon.Size = new System.Drawing.Size(209, 22);
-            this.txtTenmon.TabIndex = 32;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(102, 159);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 17);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Địa chỉ";
             // 
-            // txtMamon
+            // txtDiachi
             // 
-            this.txtMamon.Location = new System.Drawing.Point(205, 112);
-            this.txtMamon.Name = "txtMamon";
-            this.txtMamon.Size = new System.Drawing.Size(100, 22);
-            this.txtMamon.TabIndex = 31;
+            this.txtDiachi.Location = new System.Drawing.Point(205, 159);
+            this.txtDiachi.Name = "txtDiachi";
+            this.txtDiachi.Size = new System.Drawing.Size(195, 22);
+            this.txtDiachi.TabIndex = 46;
+            // 
+            // txtTenPhong
+            // 
+            this.txtTenPhong.Location = new System.Drawing.Point(489, 112);
+            this.txtTenPhong.Name = "txtTenPhong";
+            this.txtTenPhong.Size = new System.Drawing.Size(209, 22);
+            this.txtTenPhong.TabIndex = 45;
+            // 
+            // txtMaPhong
+            // 
+            this.txtMaPhong.Location = new System.Drawing.Point(205, 112);
+            this.txtMaPhong.Name = "txtMaPhong";
+            this.txtMaPhong.Size = new System.Drawing.Size(166, 22);
+            this.txtMaPhong.TabIndex = 44;
             // 
             // gridviewMon
             // 
             this.gridviewMon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridviewMon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Mamon,
-            this.Tenmon,
-            this.Hocphi});
+            this.MaPhong,
+            this.Tenphong,
+            this.Diachi});
             this.gridviewMon.Location = new System.Drawing.Point(105, 187);
             this.gridviewMon.Name = "gridviewMon";
             this.gridviewMon.RowHeadersWidth = 51;
             this.gridviewMon.RowTemplate.Height = 24;
             this.gridviewMon.Size = new System.Drawing.Size(593, 150);
-            this.gridviewMon.TabIndex = 30;
-            this.gridviewMon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewMon_CellClick);
-            this.gridviewMon.Click += new System.EventHandler(this.gridviewMon_Click);
-            // 
-            // Mamon
-            // 
-            this.Mamon.DataPropertyName = "MaMon";
-            this.Mamon.HeaderText = "Mã môn";
-            this.Mamon.MinimumWidth = 6;
-            this.Mamon.Name = "Mamon";
-            this.Mamon.Width = 125;
-            // 
-            // Tenmon
-            // 
-            this.Tenmon.DataPropertyName = "TenMon";
-            this.Tenmon.HeaderText = "Tên môn";
-            this.Tenmon.MinimumWidth = 6;
-            this.Tenmon.Name = "Tenmon";
-            this.Tenmon.Width = 300;
-            // 
-            // Hocphi
-            // 
-            this.Hocphi.DataPropertyName = "HocPhi";
-            this.Hocphi.HeaderText = "Học phí";
-            this.Hocphi.Name = "Hocphi";
+            this.gridviewMon.TabIndex = 43;
+            this.gridviewMon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewMon_CellContentClick);
             // 
             // btnthoat
             // 
@@ -105,17 +98,16 @@
             this.btnthoat.Location = new System.Drawing.Point(623, 392);
             this.btnthoat.Name = "btnthoat";
             this.btnthoat.Size = new System.Drawing.Size(75, 23);
-            this.btnthoat.TabIndex = 29;
+            this.btnthoat.TabIndex = 42;
             this.btnthoat.Text = "Thoát";
             this.btnthoat.UseVisualStyleBackColor = true;
-            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // btnluu
             // 
             this.btnluu.Location = new System.Drawing.Point(499, 393);
             this.btnluu.Name = "btnluu";
             this.btnluu.Size = new System.Drawing.Size(75, 23);
-            this.btnluu.TabIndex = 28;
+            this.btnluu.TabIndex = 41;
             this.btnluu.Text = "Lưu";
             this.btnluu.UseVisualStyleBackColor = true;
             this.btnluu.Click += new System.EventHandler(this.btnluu_Click);
@@ -125,7 +117,7 @@
             this.btnxoa.Location = new System.Drawing.Point(365, 392);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(75, 23);
-            this.btnxoa.TabIndex = 27;
+            this.btnxoa.TabIndex = 40;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
@@ -135,7 +127,7 @@
             this.btnsua.Location = new System.Drawing.Point(230, 392);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(75, 23);
-            this.btnsua.TabIndex = 26;
+            this.btnsua.TabIndex = 39;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
             this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
@@ -145,7 +137,7 @@
             this.btnthem.Location = new System.Drawing.Point(105, 393);
             this.btnthem.Name = "btnthem";
             this.btnthem.Size = new System.Drawing.Size(75, 23);
-            this.btnthem.TabIndex = 25;
+            this.btnthem.TabIndex = 38;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
@@ -155,53 +147,59 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(397, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Tên môn";
+            this.label3.Size = new System.Drawing.Size(78, 17);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "Tên Phòng";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(102, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Mã môn";
+            this.label2.Size = new System.Drawing.Size(101, 17);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Mã Phòng Học";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(362, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Môn học";
+            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Phòng học";
             // 
-            // txtHocphi
+            // MaPhong
             // 
-            this.txtHocphi.Location = new System.Drawing.Point(205, 159);
-            this.txtHocphi.Name = "txtHocphi";
-            this.txtHocphi.Size = new System.Drawing.Size(195, 22);
-            this.txtHocphi.TabIndex = 33;
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Mã Phòng Học";
+            this.MaPhong.MinimumWidth = 6;
+            this.MaPhong.Name = "MaPhong";
+            this.MaPhong.Width = 125;
             // 
-            // label4
+            // Tenphong
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(102, 159);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 17);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Học phí";
+            this.Tenphong.DataPropertyName = "TenPhong";
+            this.Tenphong.HeaderText = "Tên Phòng Học";
+            this.Tenphong.MinimumWidth = 6;
+            this.Tenphong.Name = "Tenphong";
+            this.Tenphong.Width = 300;
             // 
-            // FrmMonHoc
+            // Diachi
+            // 
+            this.Diachi.DataPropertyName = "Diachi";
+            this.Diachi.HeaderText = "Địa chỉ";
+            this.Diachi.Name = "Diachi";
+            // 
+            // FrmPhonghoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtHocphi);
-            this.Controls.Add(this.txtTenmon);
-            this.Controls.Add(this.txtMamon);
+            this.Controls.Add(this.txtDiachi);
+            this.Controls.Add(this.txtTenPhong);
+            this.Controls.Add(this.txtMaPhong);
             this.Controls.Add(this.gridviewMon);
             this.Controls.Add(this.btnthoat);
             this.Controls.Add(this.btnluu);
@@ -211,9 +209,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FrmMonHoc";
-            this.Text = "FrmMonHoc";
-            this.Load += new System.EventHandler(this.FrmMonHoc_Load);
+            this.Name = "FrmPhonghoc";
+            this.Text = "FrmPhonghoc";
+            this.Load += new System.EventHandler(this.FrmPhonghoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridviewMon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -222,8 +220,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtTenmon;
-        private System.Windows.Forms.TextBox txtMamon;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtDiachi;
+        private System.Windows.Forms.TextBox txtTenPhong;
+        private System.Windows.Forms.TextBox txtMaPhong;
         private System.Windows.Forms.DataGridView gridviewMon;
         private System.Windows.Forms.Button btnthoat;
         private System.Windows.Forms.Button btnluu;
@@ -233,10 +233,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mamon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tenmon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hocphi;
-        private System.Windows.Forms.TextBox txtHocphi;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tenphong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
     }
 }

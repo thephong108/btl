@@ -73,13 +73,43 @@ namespace quanlyloptinhocvangoaingunganhan
 
         private void lopHocToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmLophoc f1 = new FrmLophoc();
+            FrmDSHVTheoLop f1 = new FrmDSHVTheoLop();
             f1.Show();
         }
 
         private void mônHọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmMonHoc f1 = new FrmMonHoc();
+            f1.Show();
+        }
+
+        private void chuyênMônToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmChuyenmon f1 = new FrmChuyenmon();
+            f1.Show();
+        }
+
+        private void tìmKiếmGiáoViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTimKiemGiaoVien f1 = new FrmTimKiemGiaoVien();
+            f1.Show();
+        }
+
+        private void phòngHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPhonghoc f1 = new FrmPhonghoc();
+            f1.Show();
+        }
+
+        private void lớpHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmLophoc f1 = new FrmLophoc();
+            f1.Show();
+        }
+
+        private void tìmKiếmLớpHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           FrmTimKiemLopHoc f1 = new FrmTimKiemLopHoc();
             f1.Show();
         }
     }

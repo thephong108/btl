@@ -26,7 +26,7 @@ namespace quanlyloptinhocvangoaingunganhan
 
 
 
-        public void btnopen_Click(object sender, EventArgs e)
+        public void Btnopen_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlgOpen = new OpenFileDialog();
             dlgOpen.Filter = "Ảnh jpg|*.jpg|Ảnh bitmap|*.bmp|All files|*.*";

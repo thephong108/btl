@@ -35,6 +35,17 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.gridviewGV = new System.Windows.Forms.DataGridView();
+            this.MaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaChucDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Machuyenmon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaCQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Matrinhdo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtDiachi = new System.Windows.Forms.TextBox();
             this.cboMatrinhdo = new System.Windows.Forms.ComboBox();
@@ -60,17 +71,6 @@
             this.txtAnh = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.picAnh = new System.Windows.Forms.PictureBox();
-            this.MaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaChucDanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Machuyenmon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Matrinhdo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             this.SuspendLayout();
@@ -154,6 +154,72 @@
             this.gridviewGV.Size = new System.Drawing.Size(1148, 184);
             this.gridviewGV.TabIndex = 54;
             this.gridviewGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewGV_CellClick);
+            // 
+            // MaGV
+            // 
+            this.MaGV.DataPropertyName = "MaGV";
+            this.MaGV.HeaderText = "Mã Giáo Viên";
+            this.MaGV.Name = "MaGV";
+            // 
+            // TenGV
+            // 
+            this.TenGV.DataPropertyName = "TenGV";
+            this.TenGV.HeaderText = "Tên Giáo Viên";
+            this.TenGV.Name = "TenGV";
+            // 
+            // Ngaysinh
+            // 
+            this.Ngaysinh.DataPropertyName = "NgaySinh";
+            this.Ngaysinh.HeaderText = "Ngày sinh";
+            this.Ngaysinh.Name = "Ngaysinh";
+            // 
+            // Gioitinh
+            // 
+            this.Gioitinh.DataPropertyName = "GioiTinh";
+            this.Gioitinh.HeaderText = "Giới tính";
+            this.Gioitinh.Name = "Gioitinh";
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "DienThoai";
+            this.SDT.HeaderText = "Điện Thoại";
+            this.SDT.Name = "SDT";
+            // 
+            // Diachi
+            // 
+            this.Diachi.DataPropertyName = "DiaChi";
+            this.Diachi.HeaderText = "Địa chỉ";
+            this.Diachi.Name = "Diachi";
+            // 
+            // MaChucDanh
+            // 
+            this.MaChucDanh.DataPropertyName = "MaChucDanh";
+            this.MaChucDanh.HeaderText = "Mã Chức Danh";
+            this.MaChucDanh.Name = "MaChucDanh";
+            // 
+            // Machuyenmon
+            // 
+            this.Machuyenmon.DataPropertyName = "MaChuyenMon";
+            this.Machuyenmon.HeaderText = "Mã chuyên môn";
+            this.Machuyenmon.Name = "Machuyenmon";
+            // 
+            // MaCQ
+            // 
+            this.MaCQ.DataPropertyName = "MaCQ";
+            this.MaCQ.HeaderText = "Mã Cơ Quan";
+            this.MaCQ.Name = "MaCQ";
+            // 
+            // Matrinhdo
+            // 
+            this.Matrinhdo.DataPropertyName = "MaTrinhDo";
+            this.Matrinhdo.HeaderText = "Mã Trình Độ";
+            this.Matrinhdo.Name = "Matrinhdo";
+            // 
+            // Anh
+            // 
+            this.Anh.DataPropertyName = "Anh";
+            this.Anh.HeaderText = "Ảnh";
+            this.Anh.Name = "Anh";
             // 
             // txtSDT
             // 
@@ -339,7 +405,7 @@
             this.btnopen.TabIndex = 62;
             this.btnopen.Text = "Open";
             this.btnopen.UseVisualStyleBackColor = true;
-            this.btnopen.Click += new System.EventHandler(this.btnopen_Click);
+            this.btnopen.Click += new System.EventHandler(this.Btnopen_Click);
             // 
             // txtAnh
             // 
@@ -369,72 +435,6 @@
             this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAnh.TabIndex = 65;
             this.picAnh.TabStop = false;
-            // 
-            // MaGV
-            // 
-            this.MaGV.DataPropertyName = "MaGV";
-            this.MaGV.HeaderText = "Mã Giáo Viên";
-            this.MaGV.Name = "MaGV";
-            // 
-            // TenGV
-            // 
-            this.TenGV.DataPropertyName = "TenGV";
-            this.TenGV.HeaderText = "Tên Giáo Viên";
-            this.TenGV.Name = "TenGV";
-            // 
-            // Ngaysinh
-            // 
-            this.Ngaysinh.DataPropertyName = "NgaySinh";
-            this.Ngaysinh.HeaderText = "Ngày sinh";
-            this.Ngaysinh.Name = "Ngaysinh";
-            // 
-            // Gioitinh
-            // 
-            this.Gioitinh.DataPropertyName = "GioiTinh";
-            this.Gioitinh.HeaderText = "Giới tính";
-            this.Gioitinh.Name = "Gioitinh";
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "DienThoai";
-            this.SDT.HeaderText = "Điện Thoại";
-            this.SDT.Name = "SDT";
-            // 
-            // Diachi
-            // 
-            this.Diachi.DataPropertyName = "DiaChi";
-            this.Diachi.HeaderText = "Địa chỉ";
-            this.Diachi.Name = "Diachi";
-            // 
-            // MaChucDanh
-            // 
-            this.MaChucDanh.DataPropertyName = "MaChucDanh";
-            this.MaChucDanh.HeaderText = "Mã Chức Danh";
-            this.MaChucDanh.Name = "MaChucDanh";
-            // 
-            // Machuyenmon
-            // 
-            this.Machuyenmon.DataPropertyName = "MaChuyenMon";
-            this.Machuyenmon.HeaderText = "Mã chuyên môn";
-            this.Machuyenmon.Name = "Machuyenmon";
-            // 
-            // MaCQ
-            // 
-            this.MaCQ.DataPropertyName = "MaCQ";
-            this.MaCQ.HeaderText = "Mã Cơ Quan";
-            this.MaCQ.Name = "MaCQ";
-            // 
-            // Matrinhdo
-            // 
-            this.Matrinhdo.DataPropertyName = "MaTrinhDo";
-            this.Matrinhdo.HeaderText = "Mã Trình Độ";
-            this.Matrinhdo.Name = "Matrinhdo";
-            // 
-            // Anh
-            // 
-            this.Anh.DataPropertyName = "Anh";
-            this.Anh.HeaderText = "Ảnh";
-            this.Anh.Name = "Anh";
             // 
             // FrmGiaovien
             // 
@@ -502,7 +502,6 @@
         private System.Windows.Forms.ComboBox cboNgay;
         private System.Windows.Forms.ComboBox cboGioitinh;
         private System.Windows.Forms.TextBox txtTenGV;
-        private System.Windows.Forms.TextBox txtMaGV;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -528,5 +527,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn Matrinhdo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Anh;
+        public System.Windows.Forms.TextBox txtMaGV;
     }
 }

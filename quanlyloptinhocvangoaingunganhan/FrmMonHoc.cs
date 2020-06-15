@@ -135,5 +135,20 @@ namespace quanlyloptinhocvangoaingunganhan
         {
             this.Close();
         }
+
+        private void gridviewMon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridviewMon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow;
+            numrow = e.RowIndex;
+            txtMamon.Enabled = false;
+            txtTenmon.Text = gridviewMon.CurrentRow.Cells["TenMon"].Value.ToString();
+            txtMamon.Text = gridviewMon.CurrentRow.Cells["MaMon"].Value.ToString();
+            txtHocphi.Text = gridviewMon.CurrentRow.Cells["HocPhi"].Value.ToString();
+        }
     }
 }

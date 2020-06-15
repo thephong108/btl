@@ -282,6 +282,7 @@
             this.gridviewHV.Size = new System.Drawing.Size(1034, 184);
             this.gridviewHV.TabIndex = 24;
             this.gridviewHV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewHV_CellClick);
+            this.gridviewHV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewHV_CellContentClick);
             // 
             // MaHV
             // 
@@ -350,6 +351,7 @@
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 25;
             this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 

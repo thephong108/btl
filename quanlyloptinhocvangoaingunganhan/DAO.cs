@@ -173,8 +173,56 @@ namespace quanlyloptinhocvangoaingunganhan
             reader.Close();
             return ma;
         }
-
+        public static void KetNoiCSDL()
+        {
+            conn = new SqlConnection();
+            conn.ConnectionString = connectionString;
+            if (conn.State != ConnectionState.Open)
+                conn.Open();
         }
+        public static void DongKetNoiCSDL()
+        {
+            if (conn.State != ConnectionState.Closed)
+            {
+                conn.Close();
+                conn.Dispose();
+                conn = null;
+            }
+        }
+        public static DataTable DocBang(string sql)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Mydata = new SqlDataAdapter();
+            Mydata.SelectCommand = new SqlCommand();
+            KetNoiCSDL();
+            Mydata.SelectCommand.Connection = conn;
+            Mydata.SelectCommand.CommandText = sql;
+            Mydata.Fill(dt);
+            DongKetNoiCSDL();
+            return dt;
+        }
+        public static DataTable DocBang1(string sql1)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter Mydata = new SqlDataAdapter();
+            Mydata.SelectCommand = new SqlCommand();
+            KetNoiCSDL();
+            Mydata.SelectCommand.Connection = conn;
+            Mydata.SelectCommand.CommandText = sql1;
+            Mydata.Fill(dt);
+            DongKetNoiCSDL();
+            return dt;
+        }
+        public static void CapNhatDuLieu(string sql)
+        {
+            KetNoiCSDL();
+            SqlCommand sqlcommand = new SqlCommand();
+            sqlcommand.Connection = conn;
+            sqlcommand.CommandText = sql;
+            sqlcommand.ExecuteNonQuery();
+            DongKetNoiCSDL();
+        }
+    }
     
     }
 
