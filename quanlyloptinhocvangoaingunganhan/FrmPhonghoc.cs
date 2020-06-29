@@ -48,12 +48,7 @@ namespace quanlyloptinhocvangoaingunganhan
         }
         private void gridviewMon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int numrow;
-            numrow = e.RowIndex;
-            txtMaPhong.Enabled = false;
-            txtTenPhong.Text = gridviewMon.CurrentRow.Cells["Tenphong"].Value.ToString();
-            txtMaPhong.Text = gridviewMon.CurrentRow.Cells["Maphong"].Value.ToString();
-            txtDiachi.Text = gridviewMon.CurrentRow.Cells["Diachi"].Value.ToString();
+       
         }
 
         private void btnthem_Click(object sender, EventArgs e)
@@ -137,6 +132,16 @@ namespace quanlyloptinhocvangoaingunganhan
                 LoaddatatoGridview();
 
             }
+        }
+
+        private void gridviewMon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow;
+            numrow = e.RowIndex;
+            txtMaPhong.Enabled = false;
+            txtTenPhong.Text = gridviewMon.CurrentRow.Cells["Tenphong"].Value.ToString();
+            txtMaPhong.Text = gridviewMon.CurrentRow.Cells["Maphong"].Value.ToString();
+            txtDiachi.Text = gridviewMon.CurrentRow.Cells["Diachi"].Value.ToString();
         }
     }
 }

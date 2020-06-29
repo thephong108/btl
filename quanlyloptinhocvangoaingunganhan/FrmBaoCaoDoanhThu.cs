@@ -33,7 +33,7 @@ namespace quanlyloptinhocvangoaingunganhan
         {
             DAO.OpenConnection();
             string sql;
-            sql = "Select MaLop,tblLophoc.TenLop,tblLophoc.MaMon,tblLophoc.SiSo, tblMonhoc.HocPhi,(tblMonhoc.HocPhi * tblLophoc.SiSo) as Tong from tblLopHoc  join tblMonHoc  on tblLophoc.MaMon = tblMonhoc.MaMon where tblLophoc.NgayBD between N'" + DAO.ConvertDateTime(dtpTu.Text) + "' and N'" + DAO.ConvertDateTime(dtpDen.Text) + "' group by tblLophoc.MaLop, tblLophoc.TenLop, tblLophoc.MaMon,tblLophoc.SiSo";
+            sql = "Select tbllophoc.MaLop,tblLophoc.TenLop,tblLophoc.MaMon,tblLophoc.SiSo, tblMonhoc.HocPhi,(tblMonhoc.HocPhi * tblLophoc.SiSo) as Tong from tblLopHoc  join tblMonHoc  on tblLophoc.MaMon = tblMonhoc.MaMon where tblLophoc.NgayBD between N'" + DAO.ConvertDateTime(dtpTu.Text) + "' and N'" + DAO.ConvertDateTime(dtpDen.Text) + "' group by tblLophoc.MaLop, tblLophoc.TenLop, tblLophoc.MaMon,tblLophoc.SiSo";
           
          
             dgvBaoCaoDoanhThu.Columns[0].HeaderText = "Mã Lớp";

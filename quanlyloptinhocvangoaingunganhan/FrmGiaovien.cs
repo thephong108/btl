@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.IO;
+using System.Timers;
 
 
 
@@ -95,6 +96,7 @@ namespace quanlyloptinhocvangoaingunganhan
             {
                 DAO.CloseConnection();
             }
+            gridviewGV.AllowUserToAddRows = false;
         }
         public void filldatatocombo()
         {
@@ -311,7 +313,7 @@ namespace quanlyloptinhocvangoaingunganhan
             cboNam.Text = year[0];
             txtAnh.Text = gridviewGV.CurrentRow.Cells["Anh"].Value.ToString();
             cboGioitinh.Text = gridviewGV.CurrentRow.Cells["Gioitinh"].Value.ToString();
-
+           
 
         }
 

@@ -33,6 +33,9 @@
             this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.gridviewMon = new System.Windows.Forms.DataGridView();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tenphong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnthoat = new System.Windows.Forms.Button();
             this.btnluu = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
@@ -41,9 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tenphong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewMon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +90,30 @@
             this.gridviewMon.RowTemplate.Height = 24;
             this.gridviewMon.Size = new System.Drawing.Size(593, 150);
             this.gridviewMon.TabIndex = 43;
+            this.gridviewMon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewMon_CellClick);
             this.gridviewMon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewMon_CellContentClick);
+            // 
+            // MaPhong
+            // 
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Mã Phòng Học";
+            this.MaPhong.MinimumWidth = 6;
+            this.MaPhong.Name = "MaPhong";
+            this.MaPhong.Width = 125;
+            // 
+            // Tenphong
+            // 
+            this.Tenphong.DataPropertyName = "TenPhong";
+            this.Tenphong.HeaderText = "Tên Phòng Học";
+            this.Tenphong.MinimumWidth = 6;
+            this.Tenphong.Name = "Tenphong";
+            this.Tenphong.Width = 300;
+            // 
+            // Diachi
+            // 
+            this.Diachi.DataPropertyName = "Diachi";
+            this.Diachi.HeaderText = "Địa chỉ";
+            this.Diachi.Name = "Diachi";
             // 
             // btnthoat
             // 
@@ -168,28 +191,6 @@
             this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 35;
             this.label1.Text = "Phòng học";
-            // 
-            // MaPhong
-            // 
-            this.MaPhong.DataPropertyName = "MaPhong";
-            this.MaPhong.HeaderText = "Mã Phòng Học";
-            this.MaPhong.MinimumWidth = 6;
-            this.MaPhong.Name = "MaPhong";
-            this.MaPhong.Width = 125;
-            // 
-            // Tenphong
-            // 
-            this.Tenphong.DataPropertyName = "TenPhong";
-            this.Tenphong.HeaderText = "Tên Phòng Học";
-            this.Tenphong.MinimumWidth = 6;
-            this.Tenphong.Name = "Tenphong";
-            this.Tenphong.Width = 300;
-            // 
-            // Diachi
-            // 
-            this.Diachi.DataPropertyName = "Diachi";
-            this.Diachi.HeaderText = "Địa chỉ";
-            this.Diachi.Name = "Diachi";
             // 
             // FrmPhonghoc
             // 

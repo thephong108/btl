@@ -23,6 +23,8 @@ namespace quanlyloptinhocvangoaingunganhan
 
         private void FrmHocvien_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLtinhocDataSet.tblHocvien' table. You can move, or remove it, as needed.
+            this.tblHocvienTableAdapter.Fill(this.qLtinhocDataSet.tblHocvien);
             DAO.OpenConnection();
             LoaddatatoGridview();
             filldatatocombo();
@@ -214,6 +216,7 @@ namespace quanlyloptinhocvangoaingunganhan
             {
                 DAO.CloseConnection();
             }
+            gridviewHV.AllowUserToAddRows = false;
         }
         public void filldatatocombo()
         {
@@ -276,6 +279,7 @@ namespace quanlyloptinhocvangoaingunganhan
             cboThang1.Text = date1[0];
             cboNam1.Text = year1[0];
             cboGioitinh.Text = gridviewHV.CurrentRow.Cells["Gioitinh"].Value.ToString();
+          
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -302,7 +306,7 @@ namespace quanlyloptinhocvangoaingunganhan
             string sql1;
             double sl = Convert.ToDouble(DAO.DocBang("select  count(MaHocVien) from tblHocvien  join tblLophoc on tblLophoc.MaLop=tblHocvien.MaLop where tblLophoc.MaLop =N'" + cboMalop.Text + "'").Rows[0][0].ToString());
 
-            sql1 = "UPDATE tblLophoc SET SiSo = " + sl + " WHERE MaLop = N'" + cboMalop.Text.Trim() + "'";
+            sql1 = " UPDATE tblLophoc SET SiSo = " + sl + " WHERE MaLop = N'" + cboMalop.Text.Trim() + "'";
             DAO.CapNhatDuLieu(sql1);
             LoaddatatoGridview();
 
@@ -321,7 +325,7 @@ namespace quanlyloptinhocvangoaingunganhan
             string sql1;
             double sl = Convert.ToDouble(DAO.DocBang("select  count(MaHocVien) from tblHocvien  join tblLophoc on tblLophoc.MaLop=tblHocvien.MaLop where tblLophoc.MaLop =N'" + cboMalop.Text + "'").Rows[0][0].ToString());
 
-            sql1 = "UPDATE tblLophoc SET SiSo = " + sl + " WHERE MaLop = N'" + cboMalop.Text.Trim() + "'";
+            sql1 = "UPDATE tblLophoc SET SiSo = " + sl + " where MaLop = N'" + cboMalop.Text.Trim() + "'";
             DAO.CapNhatDuLieu(sql1);
             LoaddatatoGridview();
         }

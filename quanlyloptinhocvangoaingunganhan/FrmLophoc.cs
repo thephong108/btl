@@ -87,6 +87,7 @@ namespace quanlyloptinhocvangoaingunganhan
             {
                 DAO.CloseConnection();
             }
+            gridviewLop.AllowUserToAddRows = false;
         }
         public void filldatatocombo()
         {

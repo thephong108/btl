@@ -33,7 +33,7 @@ namespace quanlyloptinhocvangoaingunganhan
             sql = "SELECT * FROM tblLophoc WHERE 1=1";
 
             if (cboMalop.Text != "")
-                sql = sql + " AND MaLop Like N'%" + cboMalop.Text + "%'";
+                sql = sql + " AND MaLop Like N'%" + cboMalop.Text.Trim() + "%'";
             if (txtTenlop.Text != "")
                 sql = sql + " AND TenLop Like N'%" + txtTenlop.Text + "%'";
 
@@ -42,6 +42,8 @@ namespace quanlyloptinhocvangoaingunganhan
           
             if (cboMonhoc.Text != "")
                 sql = sql + " AND MaMon Like N'%" + cboMonhoc.Text + "%'";
+            if (txtSiso.Text != "")
+                sql = sql + " AND Siso Like N'%" + txtSiso.Text + "%'";
 
             tblLophoc = DAO.DocBang(sql);
 
@@ -53,7 +55,7 @@ namespace quanlyloptinhocvangoaingunganhan
             else
                 MessageBox.Show("Có " + tblLophoc.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             GridviewTKLophoc.DataSource = tblLophoc;
-            LoaddatatoGV();
+            LoaddatatoGV(); ResetValues();
         }
 
         private void FrmTimKiemLopHoc_Load(object sender, EventArgs e)

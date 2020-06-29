@@ -54,7 +54,7 @@ namespace quanlyloptinhocvangoaingunganhan
             foreach (Control Ctl in this.Controls)
                 if (Ctl is TextBox)
                     Ctl.Text = "";
-            cboMaGV.Text = "";
+            cboMaGV.SelectedIndex = -1;
             cboMaGV.Focus();
             cboChuyenMon.Text = "";
             txtTenGV.Text = "";
@@ -72,6 +72,7 @@ namespace quanlyloptinhocvangoaingunganhan
         {
 
             string sql;
+  
         
             if ((cboMaGV.Text == "") && (txtTenGV.Text == "") && (cboTrinhdo.Text == "") && (cboMonhoc.Text == "") &&
                 (cboChuyenMon.Text == "") )
@@ -81,7 +82,7 @@ namespace quanlyloptinhocvangoaingunganhan
                 return;
             }
             sql = "SELECT * FROM tblGiaovien WHERE 1=1";
-
+       
             if (cboMaGV.Text != "")
                 sql = sql + " AND MaGV Like N'%" +cboMaGV.Text + "%'";
             if (txtTenGV.Text != "")
@@ -90,12 +91,13 @@ namespace quanlyloptinhocvangoaingunganhan
             if (cboChuyenMon.Text != "")
                 sql = sql + " AND MaChuyenMon Like N'%" + cboChuyenMon.Text + "%'";
             if (cboMonhoc.Text != "")
-                sql = "select tblLophoc.MaGV,tblMonhoc.MaMon from tblLophoc join tblMonhoc on tblLophoc.MaMon=tblMonhoc.MaMon where tblMonhoc.MaMon = N'%" + cboMonhoc.Text + "%'";
+                sql = "select tblLophoc.MaGV from tblLophoc join tblMonhoc on tblLophoc.MaMon = tblMonhoc.MaMon  having MaMon like N'%" + cboMonhoc.Text + "%'order by tblMonhoc.MaMon";
             if (cboTrinhdo.Text != "")
                 sql = sql + " AND MaTrinhDo Like N'%" + cboTrinhdo.Text + "%'";
 
             tblGiaovien = DAO.DocBang(sql);
-   
+           
+
             if (tblGiaovien.Rows.Count == 0)
             {
                 MessageBox.Show("Không có bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -104,7 +106,10 @@ namespace quanlyloptinhocvangoaingunganhan
             else
                 MessageBox.Show("Có " + tblGiaovien.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             GridviewTKGV.DataSource = tblGiaovien;
+          
             LoaddatatoGV();
+            ResetValues();
+
         }
 
         private void GridviewTKGV_DoubleClick(object sender, EventArgs e)
