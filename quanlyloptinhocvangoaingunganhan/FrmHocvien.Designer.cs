@@ -54,12 +54,6 @@
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtDiem = new System.Windows.Forms.TextBox();
             this.gridviewHV = new System.Windows.Forms.DataGridView();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.cboManghe = new System.Windows.Forms.ComboBox();
             this.MaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Malop = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +64,12 @@
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ngaynophocphi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.cboManghe = new System.Windows.Forms.ComboBox();
             this.qLtinhocDataSet = new quanlyloptinhocvangoaingunganhan.QLtinhocDataSet();
             this.tblHocvienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblHocvienTableAdapter = new quanlyloptinhocvangoaingunganhan.QLtinhocDataSetTableAdapters.tblHocvienTableAdapter();
@@ -197,6 +197,7 @@
             this.cboNgay.Name = "cboNgay";
             this.cboNgay.Size = new System.Drawing.Size(76, 24);
             this.cboNgay.TabIndex = 14;
+            this.cboNgay.SelectedIndexChanged += new System.EventHandler(this.cboNgay_SelectedIndexChanged);
             // 
             // cboThang
             // 
@@ -302,65 +303,6 @@
             this.gridviewHV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewHV_CellClick);
             this.gridviewHV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewHV_CellContentClick);
             // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(34, 544);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 25;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(236, 544);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 26;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(483, 544);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
-            this.btnXoa.TabIndex = 27;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(708, 544);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 28;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(941, 544);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 29;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // cboManghe
-            // 
-            this.cboManghe.FormattingEnabled = true;
-            this.cboManghe.Location = new System.Drawing.Point(149, 189);
-            this.cboManghe.Name = "cboManghe";
-            this.cboManghe.Size = new System.Drawing.Size(144, 24);
-            this.cboManghe.TabIndex = 30;
-            // 
             // MaHV
             // 
             this.MaHV.DataPropertyName = "MaHocVien";
@@ -420,6 +362,65 @@
             this.Diem.DataPropertyName = "Diem";
             this.Diem.HeaderText = "Điểm";
             this.Diem.Name = "Diem";
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(34, 544);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.TabIndex = 25;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(236, 544);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.TabIndex = 26;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(483, 544);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 27;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(708, 544);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 28;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(941, 544);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.TabIndex = 29;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // cboManghe
+            // 
+            this.cboManghe.FormattingEnabled = true;
+            this.cboManghe.Location = new System.Drawing.Point(149, 189);
+            this.cboManghe.Name = "cboManghe";
+            this.cboManghe.Size = new System.Drawing.Size(144, 24);
+            this.cboManghe.TabIndex = 30;
             // 
             // qLtinhocDataSet
             // 

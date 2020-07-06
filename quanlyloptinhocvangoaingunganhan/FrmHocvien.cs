@@ -79,16 +79,16 @@ namespace quanlyloptinhocvangoaingunganhan
             //xoa du lieu trong text box
             txtMaHV.Text = "";
             txtTenHV.Text = "";
-            cboMalop.SelectedIndex = -1;
+            cboMalop.Text= "";
             txtDiem.Text = "";
             txtSDT.Text = "";
             txtDiachi.Text = "";
-            cboNgay.SelectedIndex = -1;
-            cboThang.SelectedIndex = -1;
-            cboNam.SelectedIndex = -1;
-            cboNgay1.SelectedIndex = -1;
-            cboThang1.SelectedIndex = -1;
-            cboNam1.SelectedIndex = -1;
+            cboNgay.Text = "";
+            cboThang.Text = "";
+            cboNam.Text = "";
+            cboNgay1.Text = "";
+            cboThang1.Text = "";
+            cboNam1.Text ="";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -182,10 +182,7 @@ namespace quanlyloptinhocvangoaingunganhan
 
 
 
-                double sl = Convert.ToDouble(DAO.DocBang("SELECT SiSo FROM tblLophoc WHERE MaLop=N'" + cboMalop.Text + "'").Rows[0][0].ToString());//XEM LẠI BẢNG NL ĐÃ CÓ SL CHƯA
-                double slmoi = sl + 1;
-                sql = "UPDATE tblLophoc SET SiSo = " + slmoi + " WHERE MaLop = N'" + cboMalop.Text + "'";
-                DAO.CapNhatDuLieu(sql);
+               
 
                 SqlCommand cmd = new SqlCommand(sql, DAO.conn);
                 cmd.ExecuteNonQuery();
@@ -193,7 +190,12 @@ namespace quanlyloptinhocvangoaingunganhan
                 filldatatocombo();
                 filldatatocombo1();
                 DAO.CloseConnection();
-             
+                double sl = Convert.ToDouble(DAO.DocBang("SELECT SiSo FROM tblLophoc WHERE MaLop=N'" + cboMalop.Text + "'").Rows[0][0].ToString());//XEM LẠI BẢNG NL ĐÃ CÓ SL CHƯA
+                double slmoi = sl + 1;
+                sql = "UPDATE tblLophoc SET SiSo = " + slmoi + " WHERE MaLop = N'" + cboMalop.Text + "'";
+                DAO.CapNhatDuLieu(sql);
+
+
             }
         }
         private void LoaddatatoGridview()
@@ -331,6 +333,11 @@ namespace quanlyloptinhocvangoaingunganhan
         }
 
         private void gridviewHV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cboNgay_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

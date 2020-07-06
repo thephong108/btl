@@ -153,18 +153,18 @@ namespace quanlyloptinhocvangoaingunganhan
             //xoa du lieu trong text box
             txtMaGV.Text = "";
             txtTenGV.Text = "";
-            cboMachucdanh.SelectedIndex = -1;
+            cboMachucdanh.Text = "";
             txtAnh.Text = "";
             txtSDT.Text = "";
             txtDiachi.Text = "";
-            cboNgay.SelectedIndex = -1;
-            cboThang.SelectedIndex = -1;
-            cboNam.SelectedIndex = -1;
-            cboMachuyenmon.SelectedIndex = -1;
-            cboMaCQ.SelectedIndex = -1;
-            cboMatrinhdo.SelectedIndex = -1;
+            cboNgay.Text = "";
+            cboThang.Text="";
+            cboNam.Text = "";
+            cboMachuyenmon.Text = "";
+            cboMaCQ.Text = "";
+            cboMatrinhdo.Text = "";
             txtMaGV.Enabled = true;
-          
+            cboGioitinh.Text = "";
             picAnh.Image = null;
         }
 

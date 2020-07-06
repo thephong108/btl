@@ -35,6 +35,16 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.gridviewLop = new System.Windows.Forms.DataGridView();
+            this.Malop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenlop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mamon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mathoigian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Maphong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Siso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSiso = new System.Windows.Forms.TextBox();
             this.cboNam1 = new System.Windows.Forms.ComboBox();
             this.cboThang1 = new System.Windows.Forms.ComboBox();
@@ -58,16 +68,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboMaphong = new System.Windows.Forms.ComboBox();
             this.cboMathoigian = new System.Windows.Forms.ComboBox();
-            this.Malop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenlop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mamon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mathoigian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Maphong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Siso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewLop)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,6 +150,66 @@
             this.gridviewLop.TabIndex = 54;
             this.gridviewLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridviewLop_CellClick);
             // 
+            // Malop
+            // 
+            this.Malop.DataPropertyName = "MaLop";
+            this.Malop.HeaderText = "Mã lớp";
+            this.Malop.Name = "Malop";
+            // 
+            // tenlop
+            // 
+            this.tenlop.DataPropertyName = "TenLop";
+            this.tenlop.HeaderText = "Tên lớp";
+            this.tenlop.Name = "tenlop";
+            // 
+            // Mamon
+            // 
+            this.Mamon.DataPropertyName = "MaMon";
+            this.Mamon.HeaderText = "Mã môn";
+            this.Mamon.Name = "Mamon";
+            // 
+            // MaGv
+            // 
+            this.MaGv.DataPropertyName = "MaGV";
+            this.MaGv.HeaderText = "Mã GV";
+            this.MaGv.Name = "MaGv";
+            // 
+            // NgayBD
+            // 
+            this.NgayBD.DataPropertyName = "NgayBD";
+            this.NgayBD.HeaderText = "Ngày BĐ";
+            this.NgayBD.Name = "NgayBD";
+            // 
+            // NgayKT
+            // 
+            this.NgayKT.DataPropertyName = "NgayKT";
+            this.NgayKT.HeaderText = "Ngày KT";
+            this.NgayKT.Name = "NgayKT";
+            // 
+            // MaCa
+            // 
+            this.MaCa.DataPropertyName = "MaCa";
+            this.MaCa.HeaderText = "Mã Ca";
+            this.MaCa.Name = "MaCa";
+            // 
+            // Mathoigian
+            // 
+            this.Mathoigian.DataPropertyName = "MaThoiGian";
+            this.Mathoigian.HeaderText = "Mã Thời gian";
+            this.Mathoigian.Name = "Mathoigian";
+            // 
+            // Maphong
+            // 
+            this.Maphong.DataPropertyName = "MaPhong";
+            this.Maphong.HeaderText = "Mã phòng";
+            this.Maphong.Name = "Maphong";
+            // 
+            // Siso
+            // 
+            this.Siso.DataPropertyName = "SiSo";
+            this.Siso.HeaderText = "Sĩ Số";
+            this.Siso.Name = "Siso";
+            // 
             // txtSiso
             // 
             this.txtSiso.Location = new System.Drawing.Point(150, 252);
@@ -212,6 +272,7 @@
             this.cboNgay.Name = "cboNgay";
             this.cboNgay.Size = new System.Drawing.Size(76, 24);
             this.cboNgay.TabIndex = 44;
+            this.cboNgay.SelectedIndexChanged += new System.EventHandler(this.cboNgay_SelectedIndexChanged);
             // 
             // cboMaGV
             // 
@@ -315,6 +376,7 @@
             this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 32;
             this.label2.Text = "Tên Lớp";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -340,66 +402,6 @@
             this.cboMathoigian.Name = "cboMathoigian";
             this.cboMathoigian.Size = new System.Drawing.Size(144, 24);
             this.cboMathoigian.TabIndex = 62;
-            // 
-            // Malop
-            // 
-            this.Malop.DataPropertyName = "MaLop";
-            this.Malop.HeaderText = "Mã lớp";
-            this.Malop.Name = "Malop";
-            // 
-            // tenlop
-            // 
-            this.tenlop.DataPropertyName = "TenLop";
-            this.tenlop.HeaderText = "Tên lớp";
-            this.tenlop.Name = "tenlop";
-            // 
-            // Mamon
-            // 
-            this.Mamon.DataPropertyName = "MaMon";
-            this.Mamon.HeaderText = "Mã môn";
-            this.Mamon.Name = "Mamon";
-            // 
-            // MaGv
-            // 
-            this.MaGv.DataPropertyName = "MaGV";
-            this.MaGv.HeaderText = "Mã GV";
-            this.MaGv.Name = "MaGv";
-            // 
-            // NgayBD
-            // 
-            this.NgayBD.DataPropertyName = "NgayBD";
-            this.NgayBD.HeaderText = "Ngày BĐ";
-            this.NgayBD.Name = "NgayBD";
-            // 
-            // NgayKT
-            // 
-            this.NgayKT.DataPropertyName = "NgayKT";
-            this.NgayKT.HeaderText = "Ngày KT";
-            this.NgayKT.Name = "NgayKT";
-            // 
-            // MaCa
-            // 
-            this.MaCa.DataPropertyName = "MaCa";
-            this.MaCa.HeaderText = "Mã Ca";
-            this.MaCa.Name = "MaCa";
-            // 
-            // Mathoigian
-            // 
-            this.Mathoigian.DataPropertyName = "MaThoiGian";
-            this.Mathoigian.HeaderText = "Mã Thời gian";
-            this.Mathoigian.Name = "Mathoigian";
-            // 
-            // Maphong
-            // 
-            this.Maphong.DataPropertyName = "MaPhong";
-            this.Maphong.HeaderText = "Mã phòng";
-            this.Maphong.Name = "Maphong";
-            // 
-            // Siso
-            // 
-            this.Siso.DataPropertyName = "SiSo";
-            this.Siso.HeaderText = "Sĩ Số";
-            this.Siso.Name = "Siso";
             // 
             // FrmLophoc
             // 

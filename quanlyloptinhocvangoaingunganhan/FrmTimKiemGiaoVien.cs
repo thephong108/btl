@@ -91,7 +91,8 @@ namespace quanlyloptinhocvangoaingunganhan
             if (cboChuyenMon.Text != "")
                 sql = sql + " AND MaChuyenMon Like N'%" + cboChuyenMon.Text + "%'";
             if (cboMonhoc.Text != "")
-                sql = "select tblLophoc.MaGV from tblLophoc join tblMonhoc on tblLophoc.MaMon = tblMonhoc.MaMon  having MaMon like N'%" + cboMonhoc.Text + "%'order by tblMonhoc.MaMon";
+                sql = "select tblLophoc.MaGV from tblLophoc join tblMonhoc on tblLophoc.MaMon = tblMonhoc.MaMon  where tblLophoc.MaMon like N'%" + cboMonhoc.Text + "%' "; 
+                    
             if (cboTrinhdo.Text != "")
                 sql = sql + " AND MaTrinhDo Like N'%" + cboTrinhdo.Text + "%'";
 

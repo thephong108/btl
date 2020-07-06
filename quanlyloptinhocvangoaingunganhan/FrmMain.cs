@@ -112,6 +112,31 @@ namespace quanlyloptinhocvangoaingunganhan
            FrmTimKiemLopHoc f1 = new FrmTimKiemLopHoc();
             f1.Show();
         }
+
+        private void caHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCahoc f1 = new FrmCahoc();
+            f1.Show();
+
+        }
+
+        private void chứcDanhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmChucdanh f1 = new FrmChucdanh();
+            f1.Show();
+        }
+
+        private void thờiGianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmThoigian f1 = new FrmThoigian();
+            f1.Show();
+        }
+
+        private void trìnhĐộToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmTrinhdo f1 = new FrmTrinhdo();
+            f1.Show();
+        }
     }
     }
     

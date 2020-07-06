@@ -180,18 +180,18 @@ namespace quanlyloptinhocvangoaingunganhan
         {
             txtMalop.Text = "";
             txtTenlop.Text = "";
-            cboMamon.SelectedIndex = -1;
+            cboMamon.Text = "";
             txtSiso.Text = "0";
-            cboMaphong.SelectedIndex = -1;
-            cboNgay.SelectedIndex = -1;
-            cboThang.SelectedIndex = -1;
-            cboNam.SelectedIndex = -1;
-            cboMaGV.SelectedIndex = -1;
-            cboMaca.SelectedIndex = -1;
-            cboMathoigian.SelectedIndex = -1;
-            cboNgay1.SelectedIndex = -1;
-            cboThang1.SelectedIndex = -1;
-            cboNam1.SelectedIndex = -1;
+            cboMaphong.Text = "";
+            cboNgay.Text = "";
+            cboThang.Text = "";
+            cboNam.Text = "";
+            cboMaGV.Text = "";
+            cboMaca.Text = "";
+            cboMathoigian.Text = "";
+            cboNgay1.Text = "";
+            cboThang1.Text = "";
+            cboNam1.Text = "";
             txtMalop.Enabled = true;
 
         }
@@ -275,6 +275,7 @@ namespace quanlyloptinhocvangoaingunganhan
             }
 
             string sqlCheckkey = "Select * from tblLophoc where MaLop = '" + txtMalop.Text.Trim() + "'";
+            string sqlCheckkey1 = "Select * from tblLophoc where Maphong = '" + cboMaphong.Text.Trim() + "'";
             DAO.OpenConnection();
 
             if (DAO.checkKeyexit(sqlCheckkey))
@@ -313,6 +314,9 @@ namespace quanlyloptinhocvangoaingunganhan
                 DAO.CloseConnection();
 
             }
+           
+
+            
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -356,6 +360,16 @@ namespace quanlyloptinhocvangoaingunganhan
             cmd.ExecuteNonQuery();
             DAO.CloseConnection();
             LoaddatatoGridview();
+        }
+
+        private void cboNgay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
