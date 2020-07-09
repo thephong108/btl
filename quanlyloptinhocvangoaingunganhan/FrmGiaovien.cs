@@ -52,6 +52,7 @@ namespace quanlyloptinhocvangoaingunganhan
             filldatatocombo1();
             filldatatocombo2();
             filldatatocombo3();
+            filldatatocombo4();
             DAO.CloseConnection();
             for (int i = 1; i <= 31; i++)
             {
@@ -146,6 +147,18 @@ namespace quanlyloptinhocvangoaingunganhan
 
 
         }
+        public void filldatatocombo4()
+        {
+            string sql = "select * from tblMonhoc";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, DAO.conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            cboMaMon.DataSource = table;
+            cboMaMon.ValueMember = "MaMon";
+            cboMaMon.DisplayMember = "MaMon";
+
+
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -163,6 +176,7 @@ namespace quanlyloptinhocvangoaingunganhan
             cboMachuyenmon.Text = "";
             cboMaCQ.Text = "";
             cboMatrinhdo.Text = "";
+            cboMaMon.Text = "";
             txtMaGV.Enabled = true;
             cboGioitinh.Text = "";
             picAnh.Image = null;
@@ -178,7 +192,7 @@ namespace quanlyloptinhocvangoaingunganhan
                 + "',NgaySinh='" + Ngaysinh + "', MaChuyenMon='" + cboMachuyenmon.Text.Trim() +
 
            "', Gioitinh=N'" + cboGioitinh.Text.Trim() + "',Diachi=N'" + txtDiachi.Text.Trim() + "',MaCQ=N'" + cboMaCQ.Text.Trim() +
-           "',DienThoai=N'" + txtSDT.Text.Trim() + "',Matrinhdo='" + cboMatrinhdo.Text.Trim() +
+           "',DienThoai=N'" + txtSDT.Text.Trim() + "',Matrinhdo='" + cboMatrinhdo.Text.Trim() + "',MaMon='" + cboMaMon.Text.Trim() +
            "',Anh='" + txtAnh.Text.Trim() +
            "'WHERE MaGV='" + txtMaGV.Text.Trim() + "'";
 
@@ -259,6 +273,11 @@ namespace quanlyloptinhocvangoaingunganhan
                 MessageBox.Show("Bạn chưa chọn Mã trình độ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (cboMaMon.SelectedIndex == -1)
+            {
+                MessageBox.Show("Bạn chưa chọn Mã Môn", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string sqlCheckkey = "Select * from tblGiaovien where MaGV = '" + txtMaGV.Text.Trim() + "'";
             DAO.OpenConnection();
 
@@ -280,7 +299,7 @@ namespace quanlyloptinhocvangoaingunganhan
                       + "',N'" + cboGioitinh.Text.Trim() + "',N'" + txtDiachi.Text.Trim() + "','" + txtSDT.Text.Trim()
                     + "','" + cboMachucdanh.SelectedValue.ToString() + "','" + cboMachuyenmon.SelectedValue.ToString()
 
-                   + "','" + cboMaCQ.Text.Trim() + "','" + cboMatrinhdo.Text.Trim() + "','" + txtAnh.Text.Trim() + "')";
+                   + "','" + cboMaCQ.Text.Trim() + "','" + cboMatrinhdo.Text.Trim() + "','" + cboMaMon.Text.Trim() + "','" + txtAnh.Text.Trim() + "')";
 
                 SqlCommand cmd = new SqlCommand(sql, DAO.conn);
                 cmd.ExecuteNonQuery();
@@ -289,6 +308,7 @@ namespace quanlyloptinhocvangoaingunganhan
                 filldatatocombo1();
                 filldatatocombo2();
                 filldatatocombo3();
+                filldatatocombo4();
                 DAO.CloseConnection();
 
             }
@@ -313,7 +333,8 @@ namespace quanlyloptinhocvangoaingunganhan
             cboNam.Text = year[0];
             txtAnh.Text = gridviewGV.CurrentRow.Cells["Anh"].Value.ToString();
             cboGioitinh.Text = gridviewGV.CurrentRow.Cells["Gioitinh"].Value.ToString();
-           
+            cboMaMon.Text = gridviewGV.CurrentRow.Cells["MaMon"].Value.ToString();
+
 
         }
 

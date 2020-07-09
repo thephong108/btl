@@ -143,5 +143,26 @@ namespace quanlyloptinhocvangoaingunganhan
         {
             this.Close();
         }
+
+        private void GridviewTKLophoc_DoubleClick(object sender, EventArgs e)
+        {
+            string MaLop;
+            if (MessageBox.Show("Bạn có muốn hiển thị thông tin chi tiết?", "Xác nhận",
+MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MaLop = GridviewTKLophoc.CurrentRow.Cells["MaLop"].Value.ToString();
+               FrmLophoc frm = new FrmLophoc();
+                object
+                txtMalop = MaLop;
+                
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.ShowDialog();
+            }
+        }
+
+        private void cboMonhoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -44,6 +44,8 @@ namespace quanlyloptinhocvangoaingunganhan
             this.cboMonhoc = new System.Windows.Forms.ComboBox();
             this.cboMaGV = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtTenMon = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridviewTKGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,7 +171,9 @@ namespace quanlyloptinhocvangoaingunganhan
             this.cboMonhoc.Name = "cboMonhoc";
             this.cboMonhoc.Size = new System.Drawing.Size(192, 24);
             this.cboMonhoc.TabIndex = 61;
+            this.cboMonhoc.DropDown += new System.EventHandler(this.cboMonhoc_DropDown);
             this.cboMonhoc.SelectedIndexChanged += new System.EventHandler(this.cboMonhoc_SelectedIndexChanged);
+            this.cboMonhoc.TextChanged += new System.EventHandler(this.cboMonhoc_TextChanged);
             // 
             // cboMaGV
             // 
@@ -192,11 +196,32 @@ namespace quanlyloptinhocvangoaingunganhan
             this.label2.Text = "Mã Giáo Viên";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // txtTenMon
+            // 
+            this.txtTenMon.Enabled = false;
+            this.txtTenMon.Location = new System.Drawing.Point(771, 148);
+            this.txtTenMon.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenMon.Name = "txtTenMon";
+            this.txtTenMon.Size = new System.Drawing.Size(192, 22);
+            this.txtTenMon.TabIndex = 64;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(608, 145);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 17);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "Tên Môn Học";
+            // 
             // FrmTimKiemGiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 613);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtTenMon);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cboMaGV);
             this.Controls.Add(this.cboMonhoc);
@@ -241,6 +266,9 @@ namespace quanlyloptinhocvangoaingunganhan
         {
             this.cboMaGV = cboMaGV;
         }
+
+        private TextBox txtTenMon;
+        private Label label6;
 
         public FrmTimKiemGiaoVien(Label label2)
         {

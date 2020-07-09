@@ -91,8 +91,8 @@ namespace quanlyloptinhocvangoaingunganhan
             if (cboChuyenMon.Text != "")
                 sql = sql + " AND MaChuyenMon Like N'%" + cboChuyenMon.Text + "%'";
             if (cboMonhoc.Text != "")
-                sql = "select tblLophoc.MaGV from tblLophoc join tblMonhoc on tblLophoc.MaMon = tblMonhoc.MaMon  where tblLophoc.MaMon like N'%" + cboMonhoc.Text + "%' "; 
-                    
+                sql = sql + " AND MaMon Like N'%" + cboMonhoc.Text + "%'";
+
             if (cboTrinhdo.Text != "")
                 sql = sql + " AND MaTrinhDo Like N'%" + cboTrinhdo.Text + "%'";
 
@@ -185,6 +185,28 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboMonhoc_DropDown(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboMonhoc_TextChanged(object sender, EventArgs e)
+        {
+            string sql;
+            if (cboMonhoc.Text == "")
+            {
+                txtTenMon.Text = "";
+                return;
+            }
+            sql = "SELECT TenMon FROM tblMonhoc WHERE MaMon=N'" + cboMonhoc.Text + "'";
+            DataTable table = DAO.DocBang(sql);
+            if (table.Rows.Count > 0)
+            {
+                txtTenMon.Text = table.Rows[0][0].ToString();//dòng 0 cột 0
+
+            }
         }
     }
 }

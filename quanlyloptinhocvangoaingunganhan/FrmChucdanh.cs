@@ -70,6 +70,7 @@ namespace quanlyloptinhocvangoaingunganhan
             cmd.CommandText = sql;
             cmd.Connection = DAO.conn;
             cmd.ExecuteNonQuery();
+            LoaddatatoGridview();
             DAO.CloseConnection();
          
         }
@@ -82,6 +83,7 @@ namespace quanlyloptinhocvangoaingunganhan
             cmd.CommandText = sql;
             cmd.Connection = DAO.conn;
             cmd.ExecuteNonQuery();
+            LoaddatatoGridview();
             DAO.CloseConnection();
             
         }
@@ -120,6 +122,7 @@ namespace quanlyloptinhocvangoaingunganhan
 
                 SqlCommand cmd = new SqlCommand(sql, DAO.conn);
                 cmd.ExecuteNonQuery();
+                LoaddatatoGridview();
                 DAO.CloseConnection();
             
 

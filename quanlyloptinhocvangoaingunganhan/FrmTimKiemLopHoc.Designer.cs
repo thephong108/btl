@@ -76,6 +76,7 @@
             this.cboMonhoc.Name = "cboMonhoc";
             this.cboMonhoc.Size = new System.Drawing.Size(192, 24);
             this.cboMonhoc.TabIndex = 75;
+            this.cboMonhoc.SelectedIndexChanged += new System.EventHandler(this.cboMonhoc_SelectedIndexChanged);
             this.cboMonhoc.TextChanged += new System.EventHandler(this.cboMonhoc_TextChanged);
             // 
             // btnThoat
@@ -134,6 +135,7 @@
             this.GridviewTKLophoc.Name = "GridviewTKLophoc";
             this.GridviewTKLophoc.Size = new System.Drawing.Size(869, 234);
             this.GridviewTKLophoc.TabIndex = 68;
+            this.GridviewTKLophoc.DoubleClick += new System.EventHandler(this.GridviewTKLophoc_DoubleClick);
             // 
             // label3
             // 

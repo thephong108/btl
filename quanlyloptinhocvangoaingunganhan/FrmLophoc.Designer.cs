@@ -248,6 +248,8 @@
             this.cboMamon.Name = "cboMamon";
             this.cboMamon.Size = new System.Drawing.Size(144, 24);
             this.cboMamon.TabIndex = 47;
+            this.cboMamon.SelectedIndexChanged += new System.EventHandler(this.cboMamon_SelectedIndexChanged);
+            this.cboMamon.TextChanged += new System.EventHandler(this.cboMamon_TextChanged);
             // 
             // cboNam
             // 

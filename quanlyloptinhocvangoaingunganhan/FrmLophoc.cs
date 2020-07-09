@@ -15,6 +15,8 @@ namespace quanlyloptinhocvangoaingunganhan
 {
     public partial class FrmLophoc : Form
     {
+        
+
         public FrmLophoc()
         {
             InitializeComponent();
@@ -275,7 +277,7 @@ namespace quanlyloptinhocvangoaingunganhan
             }
 
             string sqlCheckkey = "Select * from tblLophoc where MaLop = '" + txtMalop.Text.Trim() + "'";
-            string sqlCheckkey1 = "Select * from tblLophoc where Maphong = '" + cboMaphong.Text.Trim() + "'";
+          
             DAO.OpenConnection();
 
             if (DAO.checkKeyexit(sqlCheckkey))
@@ -368,6 +370,16 @@ namespace quanlyloptinhocvangoaingunganhan
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboMamon_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cboMamon_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
