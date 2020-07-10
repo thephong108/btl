@@ -182,25 +182,22 @@ namespace quanlyloptinhocvangoaingunganhan
 
                     + "','"+ txtSDT.Text.Trim() + "','" + NgayNopHocPhi + "','" + txtDiem.Text.Trim()+"')";
 
-                
 
 
 
-                SqlCommand cmd = new SqlCommand(sql, DAO.conn);
+
+                DAO.OpenConnection();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = sql;
+                cmd.Connection = DAO.conn;
                 cmd.ExecuteNonQuery();
-                LoaddatatoGridview();
-                filldatatocombo();
-                filldatatocombo1();
                 DAO.CloseConnection();
-               
                 string sql1;
+                double sl = Convert.ToDouble(DAO.DocBang("select  count(MaHocVien) from tblHocvien  join tblLophoc on tblLophoc.MaLop=tblHocvien.MaLop where tblLophoc.MaLop =N'" + cboMalop.Text + "'").Rows[0][0].ToString());
 
-                sql1 = "UPDATE tblLophoc SET SiSo = " + Convert.ToDouble(DAO.DocBang("select  count(MaHocVien) from tblHocvien  join tblLophoc on tblLophoc.MaLop=tblHocvien.MaLop where tblLophoc.MaLop =N'" + cboMalop.Text + "'").Rows[0][0].ToString()) + " where MaLop = N'" + cboMalop.Text.Trim() + "'";
-               
-                 DAO.CapNhatDuLieu(sql1);
+                sql1 = " UPDATE tblLophoc SET SiSo = " + sl + " WHERE MaLop = N'" + cboMalop.Text.Trim() + "'";
+                DAO.CapNhatDuLieu(sql1);
                 LoaddatatoGridview();
-
-
 
 
 
