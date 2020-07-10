@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBaocaosinhviendiemcao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaocaosinhviendiemcao.Designer.cs">
+      <DependentUpon>FrmBaocaosinhviendiemcao.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO.cs" />
     <Compile Include="FrmBaoCaoDoanhThu.cs">
       <SubType>Form</SubType>
@@ -162,6 +168,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLtinhocDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmBaocaosinhviendiemcao.resx">
+      <DependentUpon>FrmBaocaosinhviendiemcao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBaoCaoDoanhThu.resx">
       <DependentUpon>FrmBaoCaoDoanhThu.cs</DependentUpon>
     </EmbeddedResource>

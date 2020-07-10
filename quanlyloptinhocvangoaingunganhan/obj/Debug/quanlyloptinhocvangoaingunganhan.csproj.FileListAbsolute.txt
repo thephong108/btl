@@ -25,3 +25,4 @@ C:\Users\ADMIN\source\repos\quanlyloptinhocvangoaingunganhan\quanlyloptinhocvang
 C:\Users\ADMIN\source\repos\quanlyloptinhocvangoaingunganhan\quanlyloptinhocvangoaingunganhan\obj\Debug\quanlyloptinhocvangoaingunganhan.FrmChucdanh.resources
 C:\Users\ADMIN\source\repos\quanlyloptinhocvangoaingunganhan\quanlyloptinhocvangoaingunganhan\obj\Debug\quanlyloptinhocvangoaingunganhan.FrmThoigian.resources
 C:\Users\ADMIN\source\repos\quanlyloptinhocvangoaingunganhan\quanlyloptinhocvangoaingunganhan\obj\Debug\quanlyloptinhocvangoaingunganhan.FrmTrinhdo.resources
+C:\Users\ADMIN\source\repos\quanlyloptinhocvangoaingunganhan\quanlyloptinhocvangoaingunganhan\obj\Debug\quanlyloptinhocvangoaingunganhan.FrmBaocaosinhviendiemcao.resources

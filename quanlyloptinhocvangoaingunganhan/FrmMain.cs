@@ -137,6 +137,12 @@ namespace quanlyloptinhocvangoaingunganhan
             FrmTrinhdo f1 = new FrmTrinhdo();
             f1.Show();
         }
+
+        private void hocBongToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBaocaosinhviendiemcao f1 = new FrmBaocaosinhviendiemcao();
+            f1.Show();
+        }
     }
     }
     
