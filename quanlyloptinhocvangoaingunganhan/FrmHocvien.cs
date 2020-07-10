@@ -89,6 +89,8 @@ namespace quanlyloptinhocvangoaingunganhan
             cboNgay1.Text = "";
             cboThang1.Text = "";
             cboNam1.Text ="";
+            cboGioitinh.Text = "";
+            cboManghe.Text = "";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -124,7 +126,7 @@ namespace quanlyloptinhocvangoaingunganhan
             }
             if (cboMalop.SelectedIndex == -1)
             {
-                MessageBox.Show("Bạn chưa chọn giới tính", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa chọn mã lớp", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (cboNgay.SelectedIndex == -1)
@@ -180,9 +182,9 @@ namespace quanlyloptinhocvangoaingunganhan
 
                     + "','"+ txtSDT.Text.Trim() + "','" + NgayNopHocPhi + "','" + txtDiem.Text.Trim()+"')";
 
+                
 
 
-               
 
                 SqlCommand cmd = new SqlCommand(sql, DAO.conn);
                 cmd.ExecuteNonQuery();
@@ -190,10 +192,16 @@ namespace quanlyloptinhocvangoaingunganhan
                 filldatatocombo();
                 filldatatocombo1();
                 DAO.CloseConnection();
-                double sl = Convert.ToDouble(DAO.DocBang("SELECT SiSo FROM tblLophoc WHERE MaLop=N'" + cboMalop.Text + "'").Rows[0][0].ToString());//XEM LẠI BẢNG NL ĐÃ CÓ SL CHƯA
-                double slmoi = sl + 1;
-                sql = "UPDATE tblLophoc SET SiSo = " + slmoi + " WHERE MaLop = N'" + cboMalop.Text + "'";
-                DAO.CapNhatDuLieu(sql);
+               
+                string sql1;
+
+                sql1 = "UPDATE tblLophoc SET SiSo = " + Convert.ToDouble(DAO.DocBang("select  count(MaHocVien) from tblHocvien  join tblLophoc on tblLophoc.MaLop=tblHocvien.MaLop where tblLophoc.MaLop =N'" + cboMalop.Text + "'").Rows[0][0].ToString()) + " where MaLop = N'" + cboMalop.Text.Trim() + "'";
+               
+                 DAO.CapNhatDuLieu(sql1);
+                LoaddatatoGridview();
+
+
+
 
 
             }
