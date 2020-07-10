@@ -105,7 +105,7 @@ namespace quanlyloptinhocvangoaingunganhan
         }
         public void filldatatocombo1()
         {
-            string sql = "select * from tblGiaovien";
+            string sql = "SELECT * FROM tblGiaovien ";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, DAO.conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -382,6 +382,13 @@ namespace quanlyloptinhocvangoaingunganhan
         private void cboMamon_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboMaGV_DropDown(object sender, EventArgs e)
+        {
+            cboMaGV.DataSource = DAO.DocBang("SELECT MaGV FROM tblGiaovien where MaMon Like N'%" + cboMamon.SelectedValue + "%'");
+            cboMaGV.ValueMember = "MaGV";
+            cboMaGV.SelectedIndex = -1;
         }
     }
 }

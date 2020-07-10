@@ -283,6 +283,7 @@
             this.cboMaGV.Name = "cboMaGV";
             this.cboMaGV.Size = new System.Drawing.Size(144, 24);
             this.cboMaGV.TabIndex = 43;
+            this.cboMaGV.DropDown += new System.EventHandler(this.cboMaGV_DropDown);
             // 
             // txtTenlop
             // 
